@@ -6,9 +6,9 @@ import { MdOutlineMultipleStop } from "react-icons/md";
 import { FaLock } from "react-icons/fa";
 import { BsFillLightningChargeFill } from "react-icons/bs";
 import { MdOutlineAutoGraph } from "react-icons/md";
-
-const Working = () => {
-  const steps = [
+import { GoDotFill } from "react-icons/go";
+const Stats = () => {
+  const stats = [
     {
       icon: <FaLock className="text-white w-7 h-7" />,
       title: "Non-Custodial",
@@ -37,52 +37,81 @@ const Working = () => {
     {
       icon: <MdOutlineMultipleStop className="text-white w-7 h-7" />,
       title: "Use and Multiply",
-      para: "tsTON rewards in TON DeFi",
+      para: "tsTON rewards in TON DeFi and catch-up the rewards from the pont.",
     },
   ];
 
   return (
-    <div className="w-full pt-16 px-6 flex items-center justify-center">
-      <div className="flex flex-col  bg-bg">
-        <div className="flex flex-col">
-          <h1 className="text-primary font-semibold text-Inter">
-            START USING NOW
-          </h1>
-          <h1 className="text-secondary font-bold text-4xl">
-            How to Get Yields
-          </h1>
+    <section id="stats" className="overflow-hidden pt-16">
+      <style>
+        {`
+          @keyframes scrollStats {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+          }
+        `}
+      </style>
+
+      <div className=" mx-auto">
+        <div className="flex items-center w-full mt-6 px-6">
+          <GoDotFill className="text-white w-4 h-4 flex-shrink-0" />
+          <div className="flex-1 h-[1px] bg-white -mx-[3px]"></div>
+          <GoDotFill className="text-white w-4 h-4 flex-shrink-0" />
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-7 sm:gap-10 mt-6">
-          {steps.map((s, i) => (
-            <div
-              key={i}
-              className="flex flex-col px-4 py-4
-            rounded-2xl border border-gray-300 
-            w-full sm:w-[18rem] md:w-[24rem] 
-            h-[13rem]
-            
-            bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px]
-            font-Inter text-secondary
-            transition-all duration-300 hover:scale-105 hover:border-secondary hover:drop-shadow-2xl"
-            >
-              <div className="text-primary text-lg sm:text-xl font-semibold border-2 border-gray-300 w-14 h-14 rounded-2xl flex justify-center items-center">
-                {s.icon}
+        <div className="group flex overflow-hidden py-2">
+          <div
+            className="flex w-max gap-6 pt-16"
+            style={{
+              animation: "scrollStats 45s linear infinite",
+              animationPlayState: "var(--play-state, running)",
+            }}
+            onMouseEnter={(e) =>
+              e.currentTarget.style.setProperty("--play-state", "paused")
+            }
+            onMouseLeave={(e) =>
+              e.currentTarget.style.setProperty("--play-state", "running")
+            }
+          >
+            {[...stats, ...stats].map((item, i) => (
+              <div
+                key={i}
+                className="w-[350px]
+
+flex flex-col
+rounded-2xl border border-primary
+gap-3
+bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px]
+hover:shadow-secondary hover:drop-shadow-2xl
+hover:ring-1 hover:ring-primary
+transition-all duration-300
+hover:-translate-y-1 px-4 py-4"
+              >
+                <div className="flex flex-row justify-between w-full">
+                  <div className="w-14 h-14 border border-gray-200 rounded-2xl flex justify-center items-center">
+                    <p className="text-sm sm:text-base font-semibold text-white ">
+                      {item.icon}
+                    </p>
+                  </div>
+                  <div className="flex flex-row">
+                    <GoDotFill className="w-4 h-4 text-white animate-pulse mt-3 transform duration-300" />
+                    <GoDotFill className="w-4 h-4 text-white mt-3" />
+                  </div>
+                </div>
+                <p className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+                  {item.title}
+                </p>
+
+                <p className="text-lg text-white mt-2 leading-snug">
+                  {item.para}
+                </p>
               </div>
-
-              <h1 className="text-2xl sm:text-3xl font-bold text-secondary mt-6 text-white">
-                {s.title}
-              </h1>
-
-              <h1 className="text-base sm:text-lg font-medium text-primary mt-2 text-white">
-                {s.para}
-              </h1>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
-export default Working;
+export default Stats;

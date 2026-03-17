@@ -3,6 +3,8 @@ import Hero from "../components/home/Hero.jsx";
 import Stats from "../components/home/Stats.jsx";
 import Boost from "../components/home/Boost.jsx";
 import Working from "../components/home/Working.jsx";
+import FAQ from "../components/home/FAQ.jsx";
+import CTA from "../components/home/CTA.jsx";
 
 const Home = () => {
   return (
@@ -18,6 +20,8 @@ const Home = () => {
       <Stats />
       <Boost />
       <Working />
+      <FAQ />
+      <CTA />
     </div>
   );
 };
