@@ -71,6 +71,8 @@ const BoostIndicator = ({ className = '', setSelected , selected }) => {
         left: activeLink.offsetLeft,
         width: activeLink.offsetWidth,
       })
+
+      if(selected.id != "liquidity")
       activeLink.scrollIntoView({
       behavior: "smooth",
       inline: "center",
