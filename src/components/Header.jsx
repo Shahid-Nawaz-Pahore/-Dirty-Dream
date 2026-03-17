@@ -14,7 +14,7 @@ const Header = () => {
 
       {/* Desktop nav */}
       <div className='container flex items-center justify-between text-lg text-white'>
-        <h1>Stakee</h1>
+        <img src="/Logo.png" className='w-30' />
         <NavIndicator className='hidden md:flex' />
         <button className='bg-white text-black py-3 px-5 rounded-full flex items-center gap-2 hover:cursor-pointer hover:shadow-2xl'>
           <h1>Start Staking</h1>

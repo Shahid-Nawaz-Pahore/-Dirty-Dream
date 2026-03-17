@@ -42,7 +42,7 @@ const Stats = () => {
   ];
 
   return (
-    <section id="stats" className="overflow-hidden pt-72 md:pt-16">
+    <section id="stats" className="overflow-hidden pt-16">
       <style>
         {`
           @keyframes scrollStats {
@@ -52,8 +52,8 @@ const Stats = () => {
         `}
       </style>
 
-      <div className=" mx-auto px-4">
-        <div className="flex items-center w-full mt-6">
+      <div className=" mx-auto">
+        <div className="flex items-center w-full mt-6 px-6">
           <GoDotFill className="text-white w-4 h-4 flex-shrink-0" />
           <div className="flex-1 h-[1px] bg-white -mx-[3px]"></div>
           <GoDotFill className="text-white w-4 h-4 flex-shrink-0" />
@@ -61,7 +61,7 @@ const Stats = () => {
 
         <div className="group flex overflow-hidden py-2">
           <div
-            className="flex w-max gap-6 py-10"
+            className="flex w-max gap-6 pt-16"
             style={{
               animation: "scrollStats 45s linear infinite",
               animationPlayState: "var(--play-state, running)",
@@ -77,16 +77,15 @@ const Stats = () => {
               <div
                 key={i}
                 className="w-[350px]
-h-[180px] sm:h-[220px]
+
 flex flex-col
 rounded-2xl border border-primary
 gap-3
 bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px]
- shadow-xl
 hover:shadow-secondary hover:drop-shadow-2xl
 hover:ring-1 hover:ring-primary
 transition-all duration-300
-hover:-translate-y-1 px-4 pt-4"
+hover:-translate-y-1 px-4 py-4"
               >
                 <div className="flex flex-row justify-between w-full">
                   <div className="w-14 h-14 border border-gray-200 rounded-2xl flex justify-center items-center">
