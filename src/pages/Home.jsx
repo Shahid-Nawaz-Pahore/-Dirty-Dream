@@ -1,5 +1,8 @@
-import React from 'react'
-import Hero from '../components/home/Hero.jsx'
+import React from "react";
+import Hero from "../components/home/Hero.jsx";
+import Stats from "../components/home/Stats.jsx";
+import Boost from "../components/home/Boost.jsx";
+import Working from "../components/home/Working.jsx";
 
 const Home = () => {
   return (
@@ -12,9 +15,11 @@ const Home = () => {
       </video>
 
       <Hero />
-
+      <Stats />
+      <Boost />
+      <Working />
     </div>
-  )
-}
+  );
+};
 
 export default Home;
