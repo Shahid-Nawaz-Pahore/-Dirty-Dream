@@ -6,13 +6,9 @@ import Working from "../components/home/Working.jsx";
 
 const Home = () => {
   return (
-    <div className="relative h-screen w-full flex flex-col items-start">
-      <video
-        className="fixed -z-1 h-full w-full object-cover"
-        loop
-        autoPlay
-        muted
-      >
+    <div className='text-white'>
+
+      <video className='fixed -z-1 h-full w-full object-cover' loop autoPlay muted>
         <source src="/bg-video.mp4" type="video/mp4" />
         <source src="movie.ogg" type="video/ogg" />
         Your browser does not support the video tag.
