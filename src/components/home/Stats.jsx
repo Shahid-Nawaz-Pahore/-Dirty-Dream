@@ -14,12 +14,16 @@ const Stats = () => {
       value: "119,329",
       key: "Stakers",
     },
+    {
+      value: "2.1M",
+      key: "TON Staked"
+    },
   ];
 
   return (
     <div className="flex justify-center items-center w-full px-2 sm:px-0 pt-16 ">
-      <div className="container flex flex-col justify-center gap-10 border border-gray-300 rounded-2xl items-center bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px]">
-        <h1 className="text-2xl md:text-5xl font-bold text-white text-center mt-4">
+      <div className="container flex flex-col justify-center gap-10 items-center ">
+        {/* <h1 className="text-2xl md:text-5xl font-bold text-white text-center mt-4">
           <span className="block">
             Stakee is the fastest-growing{" "}
             <span className="text-3xl md:text-6xl text-violet-500 uppercase">
@@ -29,7 +33,7 @@ const Stats = () => {
           <span className="block">
             community on <span className="text-violet-500">TON</span>.
           </span>
-        </h1>
+        </h1> */}
         <div className="flex flex-col sm:flex-row gap-7 sm:gap-10 md:gap-20 lg:gap-32 py-4">
           {stats.map((s) => (
             <div className="flex flex-col justify-center items-center text-center gap-1">
