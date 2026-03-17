@@ -3,9 +3,9 @@ import Hero from '../components/home/Hero.jsx'
 
 const Home = () => {
   return (
-    <div className='relative h-screen w-full flex flex-col items-start'>
+    <div className='text-white'>
 
-      <video className='absolute -z-1 h-full w-full object-cover' loop autoPlay muted>
+      <video className='fixed -z-1 h-full w-full object-cover' loop autoPlay muted>
         <source src="/bg-video.mp4" type="video/mp4" />
         <source src="movie.ogg" type="video/ogg" />
         Your browser does not support the video tag.
