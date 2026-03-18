@@ -3,7 +3,7 @@ import NavIndicator from "../components/NavIndicator.jsx"
 
 const Header = () => {
   return (
-    <div className='fixed z-10 w-full flex items-center justify-center mt-5 px-2'>
+    <div className='fixed z-10 w-full flex items-center justify-center mt-5 px-6'>
 
       {/* Mobile bottom nav */}
       <div className='fixed bottom-5 left-0 w-full md:hidden flex items-center justify-center'>
