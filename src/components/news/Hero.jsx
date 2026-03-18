@@ -309,7 +309,7 @@ focus-within:scale-[1.02] focus-within:border-white"
           </div>
 
           <button
-            className="flex justify-center text-center items-center mt-1 bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] text-black border-gray-200 border rounded-2xl w-30 h-12 transition-all duration-200 
+            className="flex justify-center text-center items-center mt-1 bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] text-white border-gray-200 border rounded-2xl w-30 h-12 transition-all duration-200 
 hover:scale-105 active:scale-95"
             onClick={() => setShowAddForm(!showAddForm)}
           >
@@ -364,10 +364,10 @@ hover:scale-105 active:scale-95"
           </div>
         )}
 
-        <div className="flex flex-wrap gap-6 py-6 md:p-10 justify-center md:justify-start w-full news-card">
+        <div className="flex flex-wrap gap-6 py-6 md:p-10 justify-center w-full news-card">
           {filteredData.map((item, index) => (
             <div
-              className="w-full sm:w-[48%] lg:w-96 group 
+              className="w-full sm:w-[48%] lg:w-90 group 
   bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] 
   rounded-xl border border-gray-200
   transition-all duration-500 ease-out
