@@ -1,7 +1,8 @@
 import { BsArrowRight } from 'react-icons/bs'
 import NavIndicator from "../components/NavIndicator.jsx"
-
+import { useNavigate } from "react-router-dom";
 const Header = () => {
+  const navigate = useNavigate();
   return (
     <div className='fixed z-10 w-full flex items-center justify-center mt-5 px-6'>
 
@@ -16,10 +17,10 @@ const Header = () => {
       <div className='container flex items-center justify-between text-lg text-white'>
         <img src="/Logo.svg" className='w-12' />
         <NavIndicator className='hidden md:flex' />
-        <button className='bg-white text-black py-3 px-5 rounded-full flex items-center gap-2 hover:cursor-pointer hover:shadow-2xl'>
-          <h1>Start Staking</h1>
-          <BsArrowRight />
-        </button>
+        <button onClick={()=> navigate("/stake")} className='bg-white text-black py-3 px-5 rounded-full flex items-center gap-2 hover:cursor-pointer hover:shadow-2xl'>
+                            <h1>Start Staking</h1>
+                            <BsArrowRight />
+                            </button>
       </div>
 
     </div>
