@@ -4,7 +4,7 @@ import { BsArrowRight } from "react-icons/bs";
 import { useLocation } from "react-router";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 
 const Hero = ({ data }) => {
   const location = useLocation();

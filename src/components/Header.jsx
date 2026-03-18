@@ -1,6 +1,6 @@
 import { BsArrowRight } from 'react-icons/bs'
 import NavIndicator from "../components/NavIndicator.jsx"
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 const Header = () => {
   const navigate = useNavigate();
   return (

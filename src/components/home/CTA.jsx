@@ -1,6 +1,6 @@
 import React from 'react'
 import { BsArrowRight } from 'react-icons/bs';
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 const CTA = () => {
     const navigate = useNavigate();
   return (
