@@ -1,16 +1,18 @@
+import React from "react";
+import { Route, Routes } from "react-router";
 import React, { useEffect } from 'react'
 import { Route, Routes, useLocation } from 'react-router';
 import Home from "./pages/Home.jsx";
 import Header from "./components/Header.jsx";
 import Footer from "./components/Footer.jsx";
-import { useGSAP } from '@gsap/react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Institution from './pages/Institution.jsx';
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Institution from "./pages/Institution.jsx";
+import News from "./pages/News.jsx";
 
 const App = () => {
-
-  gsap.registerPlugin(useGSAP,ScrollTrigger);
+  gsap.registerPlugin(useGSAP, ScrollTrigger);
 
   const { pathname } = useLocation();
 
@@ -29,11 +31,11 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/institution" element={<Institution />} />
-        <Route path="/news" element={<Home />} />
+        <Route path="/news" element={<News />} />
       </Routes>
       <Footer />
     </>
-  )
-}
+  );
+};
 
 export default App;
