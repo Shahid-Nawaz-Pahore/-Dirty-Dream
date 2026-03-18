@@ -8,7 +8,7 @@ const Footer = () => {
     <div className='w-full flex items-center justify-center pt-16 px-6 md:pb-0 pb-25'>
         <div className='container flex items-center justify-between text-white'>
             <div className='flex items-center text-8xl font-bold'>
-                <img src="/Logo.png" className='md:w-90 md:h-50 w-50' />
+                <img src="/Logo.png" className='md:w-80 w-50' />
             </div>
             <div className='flex items-center gap-4'>
                 <FaTwitter className='md:size-10 size-6' />
