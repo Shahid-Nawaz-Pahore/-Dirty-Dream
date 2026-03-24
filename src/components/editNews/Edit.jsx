@@ -3,7 +3,8 @@ import { useLocation, useNavigate } from "react-router";
 import { IoArrowBack } from "react-icons/io5";
 import { FiEdit2, FiCheck } from "react-icons/fi";
 import { LuBuilding2 } from "react-icons/lu";
-import { gsap } from "gsap/dist/gsap";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
 
 const Edit = ({ onUpdate }) => {
   const { state } = useLocation();
@@ -36,7 +37,7 @@ const Edit = ({ onUpdate }) => {
     }
   }, [news]);
 
-  useEffect(() => {
+  useGSAP(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         headerRef.current,

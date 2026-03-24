@@ -3,8 +3,8 @@ import { LuBuilding2 } from "react-icons/lu";
 import { IoIosSearch } from "react-icons/io";
 import { CiCalendarDate } from "react-icons/ci";
 import { IoMdTime } from "react-icons/io";
-import { gsap } from "gsap/dist/gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useNavigate } from "react-router";
 import { FiTrash2 } from "react-icons/fi";
 
@@ -377,19 +377,18 @@ hover:scale-105 active:scale-95"
   hover:shadow-2xl hover:shadow-white/10"
               key={index}
             >
-
               <button
-    onClick={() => handleDelete(index)}
-    className="absolute top-3 right-3 z-10
+                onClick={() => handleDelete(index)}
+                className="absolute top-3 right-3 z-10
       opacity-0 group-hover:opacity-100
       p-2 rounded-xl
       bg-[rgba(255,0,0,0.2)] backdrop-blur-[20px]
       border border-red-400/40 text-white
       transition-all duration-300
       hover:scale-110 hover:bg-[rgba(255,0,0,0.35)] active:scale-95"
-  >
-    <FiTrash2 className="w-6 h-6" />
-  </button>
+              >
+                <FiTrash2 className="w-6 h-6" />
+              </button>
 
               <div className="overflow-hidden rounded-t-xl">
                 <img
@@ -399,38 +398,40 @@ hover:scale-105 active:scale-95"
   group-hover:scale-110 group-hover:rotate-1"
                 />
               </div>
-<div className="flex flex-col flex-grow px-4 py-4">
-              <div
-                className="text-lg sm:text-xl text-white px-4 mt-4 
+              <div className="flex flex-col flex-grow px-4 py-4">
+                <div
+                  className="text-lg sm:text-xl text-white px-4 mt-4 
   transition-all duration-300 
   group-hover:translate-x-1 group-hover:text-gray-200"
-              >
-                {item.head}
-              </div>
-
-              <div
-                className="px-4 text-sm sm:text-md font-semibold mt-4 
-  transition-opacity duration-300 group-hover:opacity-80"
-              >
-                {item.desc}
-                <button
-                  className="underline cursor-pointer"
-                  onClick={() => navigate('/NewsDetails' , {state: {news : item}})}
                 >
-                  Read More
-                </button>
-              </div>
-
-              <div className="flex flex-row flex-wrap gap-3 mt-4 mb-4">
-                <div className="flex flex-row gap-1 px-4  text-sm font-semibold items-center">
-                  <CiCalendarDate className="w-5 h-5" />
-                  {item.date}
+                  {item.head}
                 </div>
 
-                <div className="flex flex-row gap-1 px-4  text-sm font-semibold items-center">
-                  <IoMdTime className="w-5 h-5" />
-                  {item.time}
+                <div
+                  className="px-4 text-sm sm:text-md font-semibold mt-4 
+  transition-opacity duration-300 group-hover:opacity-80"
+                >
+                  {item.desc}
+                  <button
+                    className="underline cursor-pointer"
+                    onClick={() =>
+                      navigate("/NewsDetails", { state: { news: item } })
+                    }
+                  >
+                    Read More
+                  </button>
                 </div>
+
+                <div className="flex flex-row flex-wrap gap-3 mt-4 mb-4">
+                  <div className="flex flex-row gap-1 px-4  text-sm font-semibold items-center">
+                    <CiCalendarDate className="w-5 h-5" />
+                    {item.date}
+                  </div>
+
+                  <div className="flex flex-row gap-1 px-4  text-sm font-semibold items-center">
+                    <IoMdTime className="w-5 h-5" />
+                    {item.time}
+                  </div>
                 </div>
               </div>
               <div className="flex justify-between mx-2 mb-2 ">
