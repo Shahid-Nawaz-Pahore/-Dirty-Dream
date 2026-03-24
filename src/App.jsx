@@ -1,7 +1,7 @@
 // import React, { useEffect } from "react";
-import { Route, Routes, useLocation } from "react-router-dom";
+// import { Route, Routes, useLocation } from "react-router-dom";
 import React, { useEffect, useState } from "react";
-// import { Route, Routes, useLocation } from "react-router"; 
+ import { Route, Routes, useLocation } from "react-router"; 
 import Home from "./pages/Home.jsx";
 import Header from "./components/Header.jsx";
 import Footer from "./components/Footer.jsx";

@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from "react-router";
 import { CiCalendarDate } from "react-icons/ci";
 import { IoMdTime } from "react-icons/io";
 import { IoArrowBack } from "react-icons/io5";
-import { gsap } from "gsap/dist/gsap";
+import { gsap } from "gsap";
 import { FiEdit2 } from "react-icons/fi";
 
 const NewsDetails = () => {

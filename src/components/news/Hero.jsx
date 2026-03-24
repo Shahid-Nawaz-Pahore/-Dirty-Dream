@@ -8,7 +8,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useNavigate } from "react-router";
 import { FiTrash2 } from "react-icons/fi";
 
-gsap.registerPlugin(ScrollTrigger);
+
 
 const Hero = () => {
   const [search, setSearch] = useState("");
