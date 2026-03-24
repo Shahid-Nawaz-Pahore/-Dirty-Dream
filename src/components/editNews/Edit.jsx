@@ -101,8 +101,10 @@ const Edit = ({ onUpdate }) => {
 
   if (!news) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center text-white px-4 gap-4">
-        <p className="text-xl font-semibold">No article found to edit.</p>
+      <div className="w-full flex flex-col items-center justify-center mt-16 text-white gap-4">
+        <p className="text-xl container flex items-center font-semibold">
+          No article found to edit.
+        </p>
         <button
           onClick={() => navigate(-1)}
           className="flex items-center gap-2 px-5 py-2 rounded-2xl border border-gray-200
@@ -117,8 +119,8 @@ const Edit = ({ onUpdate }) => {
   }
 
   return (
-    <div className="min-h-screen px-4 pt-16 md:pt-24 pb-16">
-      <div className="max-w-3xl mx-auto flex flex-col gap-8">
+    <div className="w-full justify-center items-center px-4 pt-16 md:pt-24 pb-16">
+      <div className="container mx-auto justify-center flex flex-col gap-8">
         <div ref={headerRef} className="flex flex-col gap-4">
           <button
             onClick={() => navigate(-1)}

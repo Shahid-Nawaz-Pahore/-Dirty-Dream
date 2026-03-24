@@ -69,21 +69,22 @@ const NewsDetails = () => {
     : [news.desc];
 
   return (
-    <div className="min-h-screen px-4 pt-16 md:pt-24 pb-16">
-      <div className="max-w-4xl mx-auto flex flex-col gap-8">
+    <div className="w-full flex justify-center items-center px-4 pt-16 md:pt-24 pb-16">
+      <div className="container mx-auto flex flex-col gap-8">
+        <div className="flex justify-end w-full">
         <button
           ref={backBtnRef}
           onClick={() => navigate(-1)}
           className="flex items-center gap-2 w-fit px-4 py-2 rounded-2xl border border-gray-200 
             bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] text-white text-sm font-semibold
-            transition-all duration-200 hover:scale-105 active:scale-95 hover:bg-[rgba(255,255,255,0.3)]"
+            transition-all duration-200 fixed z-10  justify-end hover:scale-105 active:scale-95 hover:bg-[rgba(255,255,255,0.3)]"
         >
           <IoArrowBack className="w-4 h-4" />
           Back to News
         </button>
-
+</div>
         <div
-          className="detail-hero w-full rounded-2xl border border-gray-200 
+          className="detail-hero w-full rounded-2xl border border-gray-200 mt-5
             bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] overflow-hidden
             shadow-2xl shadow-white/5"
         >
@@ -119,24 +120,16 @@ const NewsDetails = () => {
           </div>
         </div>
 
-        <div
-          className="w-full rounded-2xl border border-gray-200 
-            bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px]
-            px-6 sm:px-10 py-8 flex flex-col gap-5
-            shadow-2xl shadow-white/5"
-        >
-          {paragraphs.map((para, i) => (
-            <p
-              key={i}
-              className="detail-para text-sm sm:text-base font-semibold text-white leading-relaxed"
-            >
-              {para}
-            </p>
-          ))}
-        </div>
+        <div className="w-full rounded-2xl border border-gray-200 
+  bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px]
+  px-6 sm:px-10 py-8 shadow-2xl shadow-white/5">
+  <p className="detail-para text-sm sm:text-xl font-semibold text-white leading-relaxed">
+    {paragraphs}
+  </p>
+</div>
 
-        <div className="flex flex-row w-full justify-between">
-          <button
+        <div className="flex w-full justify-end">
+          {/* <button
             onClick={() => navigate(-1)}
             className="flex items-center gap-2 w-fit self-center px-6 py-3 rounded-2xl border border-gray-200 
             bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] text-white font-semibold
@@ -144,10 +137,10 @@ const NewsDetails = () => {
           >
             <IoArrowBack className="w-4 h-4" />
             Back to News
-          </button>
+          </button> */}
 
           <button
-            onClick={() => navigate("/EditNews", { state: { news } })}
+            onClick={() => navigate("/admin/edit", { state: { news } })}
             className="flex items-center gap-2 px-4 py-2 rounded-2xl border border-gray-200
   bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] text-white text-sm font-semibold
   transition-all duration-200 hover:scale-105 active:scale-95"
