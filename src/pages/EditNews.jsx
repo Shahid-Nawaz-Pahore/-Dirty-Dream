@@ -1,5 +1,5 @@
 import React from 'react'
-import Edit from '../components/editNews/edit'
+import Edit from '../components/editNews/Edit.jsx'
 
 const EditNews = () => {
   return (
