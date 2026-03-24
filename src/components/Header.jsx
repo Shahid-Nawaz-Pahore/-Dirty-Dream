@@ -1,6 +1,6 @@
 import { BsArrowRight } from 'react-icons/bs'
 import NavIndicator from "../components/NavIndicator.jsx"
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 const Header = () => {
   const navigate = useNavigate();
   return (
@@ -17,7 +17,7 @@ const Header = () => {
       <div className='container flex items-center justify-between text-lg text-white'>
         <img src="/Logo.svg" className='w-12' />
         <NavIndicator className='hidden md:flex' />
-        <button onClick={()=> navigate("/stake")} className='bg-white text-black py-3 px-5 rounded-full flex items-center gap-2 hover:cursor-pointer hover:shadow-2xl'>
+        <button onClick={()=> window.open("https://stakee-stake.vercel.app","_blank")} className='bg-white text-black py-3 px-5 rounded-full flex items-center gap-2 hover:cursor-pointer hover:shadow-2xl'>
                             <h1>Start Staking</h1>
                             <BsArrowRight />
                             </button>

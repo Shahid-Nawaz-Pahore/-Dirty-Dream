@@ -4,7 +4,7 @@ import { BsArrowRight } from "react-icons/bs";
 import { useLocation } from "react-router";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 
 const Hero = ({ data }) => {
   const location = useLocation();
@@ -60,8 +60,9 @@ const Hero = ({ data }) => {
             <h1 className="text-xl font-medium">{data.desSub}</h1>
           </div>
           <button
-            onClick={() => navigate("/stake")}
-            className="text-xl font-medium bg-white text-black py-3 px-5 rounded-full"
+            onClick={() => window.open("https://stakee-stake.vercel.app","_blank")}
+            className="text-xl font-medium bg-white text-black py-3 px-5 rounded-full cursor-pointer"
+            id="content-3"
           >
             Start Staking
           </button>

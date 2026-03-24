@@ -1,6 +1,6 @@
 import React from 'react'
 import { BsArrowRight } from 'react-icons/bs';
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 const CTA = () => {
     const navigate = useNavigate();
   return (
@@ -12,8 +12,8 @@ const CTA = () => {
                 <div className='md:w-[50%] flex flex-col text-[0.5em]'>
                     <h1>Stake TON, instantly receive liquid STAKED tokens, earn 5.2% APY with auto-compounding, and usable across TON DeFi.</h1>
                 </div>
-                <div className='md:w-[50%] flex items-center justify-end text-[0.5em]'>
-                    <button onClick={()=> navigate("/stake")} className='bg-white text-black py-3 px-5 rounded-full flex items-center gap-2 hover:cursor-pointer hover:shadow-2xl'>
+                <div className='md:w-[50%] flex items-center justify-end text-[0.5em] cursor-pointer'>
+                    <button onClick={()=> window.open("https://stakee-stake.vercel.app","_blank")} className='bg-white text-black py-3 px-5 rounded-full flex items-center gap-2 hover:cursor-pointer hover:shadow-2xl'>
                     <h1>Start Staking</h1>
                     <BsArrowRight />
                     </button>
