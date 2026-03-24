@@ -62,6 +62,7 @@ const Hero = ({ data }) => {
           <button
             onClick={() => window.open("https://stakee-stake.vercel.app","_blank")}
             className="text-xl font-medium bg-white text-black py-3 px-5 rounded-full cursor-pointer"
+            id="content-3"
           >
             Start Staking
           </button>
