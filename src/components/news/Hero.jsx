@@ -3,33 +3,27 @@ import { LuBuilding2 } from "react-icons/lu";
 import { IoIosSearch } from "react-icons/io";
 import { CiCalendarDate } from "react-icons/ci";
 import { IoMdTime } from "react-icons/io";
-import { gsap } from "gsap/dist/gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useNavigate } from "react-router";
+import { FiTrash2 } from "react-icons/fi";
 
 const Hero = () => {
   const [search, setSearch] = useState("");
   const [showAddForm, setShowAddForm] = useState(false);
   const [editingIndex, setEditingIndex] = useState(null);
   const [selectedNews, setSelectedNews] = useState(null);
-
+  const navigate = useNavigate();
   const [newsData, setNewsData] = useState([
     {
       img: "/image.png",
       head: "TON Liquid Reaches $50M TVL Milestone",
       desc: "We are thrilled to announce that TON Liquid has surpassed $50 million in Total Value Locked, marking a significant milestone in our journ...",
-      longDesc: `We are thrilled to announce that TON Liquid has officially surpassed $50 million in Total Value Locked, marking a major milestone in the platform’s growth journey.
-This achievement highlights the increasing trust and confidence placed in TON Liquid by the global community.
-The rapid growth reflects strong adoption of liquid staking solutions across the TON ecosystem.
-Users continue to benefit from flexible staking while maintaining liquidity through stTON tokens.
-This milestone was driven by consistent protocol upgrades and improved user experience.
-Community participation and validator support played a key role in reaching this level.
-Security-first design and transparent operations remain core priorities.
-As TVL continues to grow, TON Liquid is positioned as a leading staking solution on TON.
-The team remains committed to long-term sustainability and innovation.
-More ecosystem partnerships and integrations are planned in upcoming releases.
-Thank you to our community for making this milestone possible.`,
+      longDesc: `We are thrilled to announce that TON Liquid has officially surpassed $50 million in Total Value Locked, marking a major milestone in the platform's growth journey. This achievement highlights the increasing trust and confidence placed in TON Liquid by the global community. The rapid growth reflects strong adoption of liquid staking solutions across the TON ecosystem.
+
+Users continue to benefit from flexible staking while maintaining liquidity through stTON tokens. This milestone was driven by consistent protocol upgrades and improved user experience. Community participation and validator support played a key role in reaching this level.
+
+Security-first design and transparent operations remain core priorities. As TVL continues to grow, TON Liquid is positioned as a leading staking solution on TON. The team remains committed to long-term sustainability and innovation. More ecosystem partnerships and integrations are planned in upcoming releases. Thank you to our community for making this milestone possible.`,
 
       date: "Nov 4, 2025",
       time: "3 min read",
@@ -38,19 +32,11 @@ Thank you to our community for making this milestone possible.`,
       img: "/image2.png",
       head: "How to Maximize Your TON Staking Rewards",
       desc: "Learn the best strategies to optimize your liquid staking returns with TON Liquid. This comprehensive guide covers everything from...",
-      longDesc: `
-Maximizing staking rewards requires a deep understanding of both protocol mechanics and market behavior.
-This guide explores proven strategies to optimize returns using TON Liquid’s staking features.
-Readers will learn how liquid staking differs from traditional staking models.
-We explain how stTON tokens allow users to stay liquid while earning rewards.
-Advanced compounding techniques are covered for long-term growth.
-Risk management strategies are outlined to protect staked assets.
-The guide also explains validator selection and delegation best practices.
-Timing strategies for staking and unstaking are discussed in detail.
-Real-world examples demonstrate reward optimization techniques.
-Whether you are a beginner or advanced user, this guide adds value.
-Following these strategies can significantly improve yield efficiency.
-`,
+      longDesc: `Maximizing staking rewards requires a deep understanding of both protocol mechanics and market behavior. This guide explores proven strategies to optimize returns using TON Liquid's staking features. Readers will learn how liquid staking differs from traditional staking models.
+
+We explain how stTON tokens allow users to stay liquid while earning rewards. Advanced compounding techniques are covered for long-term growth. Risk management strategies are outlined to protect staked assets. The guide also explains validator selection and delegation best practices.
+
+Timing strategies for staking and unstaking are discussed in detail. Real-world examples demonstrate reward optimization techniques. Whether you are a beginner or advanced user, this guide adds value. Following these strategies can significantly improve yield efficiency.`,
 
       date: "Nov 1, 2025",
       time: "7 min read",
@@ -59,19 +45,11 @@ Following these strategies can significantly improve yield efficiency.
       img: "/image3.webp",
       head: "Protocol Update: Reduced Fees & Improved UX",
       desc: "We're excited to announce a major protocol update that reduces staking fees and introduces a completely redesigned user interface for...",
-      longDesc: `
-We are excited to introduce a major protocol update focused on performance and usability.
-Transaction and staking fees have been reduced to improve accessibility.
-The updated user interface offers a cleaner and more intuitive experience.
-Navigation across staking, rewards, and analytics is now faster.
-Smart contract optimizations enhance execution efficiency.
-Users will notice reduced confirmation times across interactions.
-Visual improvements make key metrics easier to understand.
-Mobile responsiveness has been significantly improved.
-Security audits were conducted prior to release.
-This update reflects our commitment to continuous improvement.
-More performance-focused upgrades are already in development.
-`,
+      longDesc: `We are excited to introduce a major protocol update focused on performance and usability. Transaction and staking fees have been reduced to improve accessibility. The updated user interface offers a cleaner and more intuitive experience.
+
+Navigation across staking, rewards, and analytics is now faster. Smart contract optimizations enhance execution efficiency. Users will notice reduced confirmation times across interactions. Visual improvements make key metrics easier to understand.
+
+Mobile responsiveness has been significantly improved. Security audits were conducted prior to release. This update reflects our commitment to continuous improvement. More performance-focused upgrades are already in development.`,
 
       date: "Oct 27, 2025",
       time: "4 min read",
@@ -80,20 +58,11 @@ More performance-focused upgrades are already in development.
       img: "/image4.png",
       head: "Understanding Liquid Staking on TON",
       desc: "New to liquid staking? This beginner-friendly guide explains how liquid staking works on TON blockchain and why it's revolutioniz...",
-      longDesc: `
-Liquid staking is transforming how users interact with blockchain staking.
-This guide introduces the core concepts behind liquid staking on TON.
-We explain how users can stake assets without locking liquidity.
-stTON tokens represent staked value while remaining usable in DeFi.
-The guide compares traditional staking vs liquid staking.
-Users learn how rewards are generated and distributed.
-Potential risks and mitigation strategies are clearly explained.
-Use cases such as lending and liquidity pools are explored.
-This model unlocks new financial flexibility for participants.
-The TON ecosystem benefits from increased capital efficiency.
-Ideal for beginners seeking clarity on modern staking models.
-`,
+      longDesc: `Liquid staking is transforming how users interact with blockchain staking. This guide introduces the core concepts behind liquid staking on TON. We explain how users can stake assets without locking liquidity.
 
+stTON tokens represent staked value while remaining usable in DeFi. The guide compares traditional staking vs liquid staking. Users learn how rewards are generated and distributed. Potential risks and mitigation strategies are clearly explained.
+
+Use cases such as lending and liquidity pools are explored. This model unlocks new financial flexibility for participants. The TON ecosystem benefits from increased capital efficiency. Ideal for beginners seeking clarity on modern staking models.`,
       date: "Oct 24, 2025",
       time: "5 min read",
     },
@@ -101,61 +70,37 @@ Ideal for beginners seeking clarity on modern staking models.
       img: "/image5.webp",
       head: "Partnership Announcement: Integration with Major DEX",
       desc: "TON Liquid partners with leading decentralized exchanges to enable seamless trading and liquidity provision using stTON tokens.",
-      longDesc: `
-TON Liquid is proud to announce a strategic integration with a major decentralized exchange.
-This partnership enables seamless trading of stTON tokens.
-Users can now access deeper liquidity and better price discovery.
-The integration enhances overall ecosystem interoperability.
-Liquidity providers benefit from new yield opportunities.
-Trading stTON becomes faster and more efficient.
-This move strengthens TON Liquid’s DeFi positioning.
-Security and performance were prioritized during integration.
-Cross-platform usability improves user adoption.
-Future DEX integrations are already under evaluation.
-This partnership marks a major step toward DeFi expansion.
-`,
+      longDesc: `TON Liquid is proud to announce a strategic integration with a major decentralized exchange. This partnership enables seamless trading of stTON tokens. Users can now access deeper liquidity and better price discovery.
+
+The integration enhances overall ecosystem interoperability. Liquidity providers benefit from new yield opportunities. Trading stTON becomes faster and more efficient. This move strengthens TON Liquid's DeFi positioning.
+
+Security and performance were prioritized during integration. Cross-platform usability improves user adoption. Future DEX integrations are already under evaluation. This partnership marks a major step toward DeFi expansion.`,
 
       date: "Oct 19, 2025",
       time: "3 min read",
     },
     {
       img: "/image6.webp",
-      head: "Q4 2024 Roadmap Released",
+      head: "Q4 2024 Roadmap Released by TON Chain",
       desc: "Check out our ambitious roadmap for Q4 2024, featuring new features, partnerships, and exciting developments for the TON Liquid...",
-      longDesc: `
-We are excited to unveil the official roadmap for Q4 2024.
-The roadmap outlines upcoming protocol upgrades and features.
-Key focus areas include scalability, security, and user experience.
-New staking options will offer greater flexibility.
-Expanded analytics tools are planned for transparency.
-Multiple ecosystem partnerships are scheduled for release.
-UI enhancements will improve onboarding for new users.
-Performance optimizations remain a top priority.
-Community feedback heavily influenced roadmap planning.
-Each milestone aligns with long-term protocol vision.
-The roadmap demonstrates TON Liquid’s commitment to growth.
-`,
+      longDesc: `We are excited to unveil the official roadmap for Q4 2024. The roadmap outlines upcoming protocol upgrades and features. Key focus areas include scalability, security, and user experience.
+
+New staking options will offer greater flexibility. Expanded analytics tools are planned for transparency. Multiple ecosystem partnerships are scheduled for release. UI enhancements will improve onboarding for new users.
+
+Performance optimizations remain a top priority. Community feedback heavily influenced roadmap planning. Each milestone aligns with long-term protocol vision. The roadmap demonstrates TON Liquid's commitment to growth.`,
 
       date: "Oct 14, 2025",
       time: "6 min read",
     },
     {
       img: "/image7.webp",
-      head: "Security Audit Results Published",
+      head: "Security Audit Results Published by TON",
       desc: "Independent security audit confirms TON Liquid smart contracts are secure and follow best practices...",
-      longDesc: `
-Security remains a top priority for TON Liquid.
-An independent third-party audit has been successfully completed.
-The audit confirms adherence to industry best practices.
-Smart contracts were tested against common attack vectors.
-No critical vulnerabilities were identified.
-Recommendations from auditors have been implemented.
-The audit improves overall protocol trust and transparency.
-Users can stake with increased confidence.
-Continuous monitoring systems remain active.
-Future audits are already planned.
-Security-first development remains non-negotiable.
-`,
+      longDesc: `Security remains a top priority for TON Liquid. An independent third-party audit has been successfully completed. The audit confirms adherence to industry best practices. Smart contracts were tested against common attack vectors.
+
+No critical vulnerabilities were identified. Recommendations from auditors have been implemented. The audit improves overall protocol trust and transparency. Users can stake with increased confidence.
+
+Continuous monitoring systems remain active. Future audits are already planned. Security-first development remains non-negotiable.`,
 
       date: "Oct 9, 2025",
       time: "4 min read",
@@ -164,20 +109,11 @@ Security-first development remains non-negotiable.
       img: "/image8.webp",
       head: "DeFi Strategies: Using stTON in Lending Protocols",
       desc: "Discover advanced DeFi strategies that leverage stTON tokens for lending, borrowing, and yield farming...",
-      longDesc: `
-stTON tokens unlock advanced DeFi opportunities beyond staking.
-This article explores lending and borrowing strategies using stTON.
-Users can earn additional yield without unstaking assets.
-Collateralized lending models are explained step by step.
-Risk considerations are clearly outlined for informed decisions.
-Liquidity optimization techniques are discussed.
-Yield stacking strategies are explored in real-world scenarios.
-Protocol compatibility enhances capital efficiency.
-This approach enables multi-layered reward generation.
-Advanced users benefit from flexible DeFi integrations.
-A must-read for yield-focused participants.
-`,
+      longDesc: `stTON tokens unlock advanced DeFi opportunities beyond staking. This article explores lending and borrowing strategies using stTON. Users can earn additional yield without unstaking assets. Collateralized lending models are explained step by step.
 
+Risk considerations are clearly outlined for informed decisions. Liquidity optimization techniques are discussed. Yield stacking strategies are explored in real-world scenarios. Protocol compatibility enhances capital efficiency.
+
+This approach enables multi-layered reward generation. Advanced users benefit from flexible DeFi integrations. A must-read for yield-focused participants.`,
       date: "Oct 4, 2025",
       time: "8 min read",
     },
@@ -266,17 +202,9 @@ A must-read for yield-focused participants.
       item.desc.toLowerCase().includes(search.toLowerCase()),
   );
 
-  const handleDelete = (index) => {
-    if (window.confirm("Are you sure you want to delete this news item?")) {
-      const updatedNews = [...newsData];
-      updatedNews.splice(index, 1);
-      setNewsData(updatedNews);
-    }
-  };
-
   return (
-    <div className="flex justify-center pt-16 md:pt-24 lg:pt-30 px-4">
-      <div className="flex flex-col justify-center items-center gap-6 w-full max-w-7xl">
+    <div className="w-full flex items-center justify-center pt-16 md:pt-30 px-4 md:pb-0 pb-25">
+      <div className="flex flex-col container mx-auto justify-center items-center gap-6">
         <div className="flex justify-center items-center gap-2 flex-row w-full sm:w-40 h-9  rounded-3xl border border-gray-200 bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] headings">
           <LuBuilding2 className="w-4 h-4" />
           <h1 className="text-white text-sm text-center">Latest Updates</h1>
@@ -364,10 +292,13 @@ hover:scale-105 active:scale-95"
           </div>
         )}
 
-        <div className="flex flex-wrap gap-6 py-6 md:p-10 justify-center w-full news-card">
+        <div className="flex flex-wrap h-full gap-18 justify-center w-full news-card ">
           {filteredData.map((item, index) => (
             <div
-              className="w-full sm:w-[48%] lg:w-90 group 
+              onClick={() => {
+                navigate("/NewsDetails", { state: { news: item } });
+              }}
+              className="relative w-full sm:w-[48%] lg:w-90 group 
   bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] 
   rounded-xl border border-gray-200
   transition-all duration-500 ease-out
@@ -375,6 +306,22 @@ hover:scale-105 active:scale-95"
   hover:shadow-2xl hover:shadow-white/10"
               key={index}
             >
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  navigate("/admin/delete", { state: { news: item, index } });
+                }}
+                className="absolute top-3 right-3 z-10
+      opacity-0 group-hover:opacity-100
+      p-2 rounded-xl
+      bg-[rgba(255,0,0,0.2)] backdrop-blur-[20px]
+      border border-red-400/40 text-white
+      transition-all duration-300
+      hover:scale-110 hover:bg-[rgba(255,0,0,0.35)] active:scale-95"
+              >
+                <FiTrash2 className="w-6 h-6" />
+              </button>
+
               <div className="overflow-hidden rounded-t-xl">
                 <img
                   src={item.img || "/coin.PNG"}
@@ -383,41 +330,44 @@ hover:scale-105 active:scale-95"
   group-hover:scale-110 group-hover:rotate-1"
                 />
               </div>
-
-              <div
-                className="text-lg sm:text-xl text-white px-4 mt-4 
+              <div className="flex flex-col flex-grow px-4 py-4">
+                <div
+                  className="text-lg sm:text-xl text-white px-4 mt-4 
   transition-all duration-300 
-  group-hover:translate-x-1 group-hover:text-gray-200"
-              >
-                {item.head}
-              </div>
-
-              <div
-                className="px-4 text-sm sm:text-md font-semibold mt-4 
-  transition-opacity duration-300 group-hover:opacity-80"
-              >
-                {item.desc}
-                <button
-                  className="underline cursor-pointer"
-                  onClick={() => setSelectedNews(item)}
+  "
                 >
-                  Read More
-                </button>
-              </div>
-
-              <div className="flex flex-row flex-wrap gap-3 mt-4 mb-4">
-                <div className="flex flex-row gap-1 px-4  text-sm font-semibold items-center">
-                  <CiCalendarDate className="w-5 h-5" />
-                  {item.date}
+                  {item.head}
                 </div>
 
-                <div className="flex flex-row gap-1 px-4  text-sm font-semibold items-center">
-                  <IoMdTime className="w-5 h-5" />
-                  {item.time}
+                <div
+                  className="px-4 text-sm sm:text-md font-semibold mt-4 
+  transition-opacity duration-300 group-hover:opacity-80"
+                >
+                  {item.desc}
+                  {/* <button
+                    className="underline cursor-pointer"
+                    onClick={() =>
+                      navigate("/NewsDetails", { state: { news: item } })
+                    }
+                  >
+                    Read More
+                  </button> */}
+                </div>
+
+                <div className="flex flex-row flex-wrap gap-3 mt-4 mb-4">
+                  <div className="flex flex-row gap-1 px-4  text-sm font-semibold items-center">
+                    <CiCalendarDate className="w-5 h-5" />
+                    {item.date}
+                  </div>
+
+                  <div className="flex flex-row gap-1 px-4  text-sm font-semibold items-center">
+                    <IoMdTime className="w-5 h-5" />
+                    {item.time}
+                  </div>
                 </div>
               </div>
               <div className="flex justify-between mx-2 mb-2 ">
-                <button
+                {/* <button
                   className="px-2 py-1 rounded-xl 
 bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] text-red-500
 transition-all duration-200 
@@ -425,9 +375,9 @@ hover:scale-105 active:scale-95"
                   onClick={() => handleDelete(index)}
                 >
                   Delete
-                </button>
+                </button> */}
 
-                <button
+                {/* <button
                   className="px-2 py-1 rounded-xl 
 bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px]
 transition-all duration-200 
@@ -439,7 +389,7 @@ hover:scale-105 active:scale-95"
                   }}
                 >
                   Update
-                </button>
+                </button> */}
               </div>
             </div>
           ))}
