@@ -48,7 +48,7 @@ const App = () => {
         <source src="movie.ogg" type="video/ogg" />
         Your browser does not support the video tag.
       </video>
-      <Header />
+      {/* <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/institution" element={<Institution />} />
@@ -57,7 +57,7 @@ const App = () => {
         <Route path="/newsDetails" element={<NewsDetails />} />
         <Route path="/editNews" element={<EditNews />} />
       </Routes>
-      <Footer />
+      <Footer /> */}
       <div className={`${loaded ? "opacity-100" : "opacity-0"} transition-opacity duration-500`}>
         <Header />
         <Routes>
@@ -65,6 +65,8 @@ const App = () => {
           <Route path="/institution" element={<Institution />} />
           <Route path="/news" element={<News />} />
           <Route path="/stake" element={<Stake />} />
+           <Route path="/newsDetails" element={<NewsDetails />} />
+        <Route path="/editNews" element={<EditNews />} />
         </Routes>
         <Footer />
       </div>
