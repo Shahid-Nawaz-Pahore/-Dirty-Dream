@@ -5,6 +5,8 @@ import { CiCalendarDate } from "react-icons/ci";
 import { IoMdTime } from "react-icons/io";
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { useNavigate } from "react-router";
+import { FiTrash2 } from "react-icons/fi";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -13,7 +15,7 @@ const Hero = () => {
   const [showAddForm, setShowAddForm] = useState(false);
   const [editingIndex, setEditingIndex] = useState(null);
   const [selectedNews, setSelectedNews] = useState(null);
-
+  const navigate = useNavigate();
   const [newsData, setNewsData] = useState([
     {
       img: "/image.png",
@@ -120,7 +122,7 @@ This partnership marks a major step toward DeFi expansion.
     },
     {
       img: "/image6.webp",
-      head: "Q4 2024 Roadmap Released",
+      head: "Q4 2024 Roadmap Released by TON Chain",
       desc: "Check out our ambitious roadmap for Q4 2024, featuring new features, partnerships, and exciting developments for the TON Liquid...",
       longDesc: `
 We are excited to unveil the official roadmap for Q4 2024.
@@ -141,7 +143,7 @@ The roadmap demonstrates TON Liquid’s commitment to growth.
     },
     {
       img: "/image7.webp",
-      head: "Security Audit Results Published",
+      head: "Security Audit Results Published by TON",
       desc: "Independent security audit confirms TON Liquid smart contracts are secure and follow best practices...",
       longDesc: `
 Security remains a top priority for TON Liquid.
@@ -364,7 +366,7 @@ hover:scale-105 active:scale-95"
           </div>
         )}
 
-        <div className="flex flex-wrap gap-6 py-6 md:p-10 justify-center w-full news-card">
+        <div className="flex flex-wrap h-full gap-6 py-6 md:p-10 justify-center w-full news-card ">
           {filteredData.map((item, index) => (
             <div
               className="w-full sm:w-[48%] lg:w-90 group 
@@ -375,6 +377,20 @@ hover:scale-105 active:scale-95"
   hover:shadow-2xl hover:shadow-white/10"
               key={index}
             >
+
+              <button
+    onClick={() => handleDelete(index)}
+    className="absolute top-3 right-3 z-10
+      opacity-0 group-hover:opacity-100
+      p-2 rounded-xl
+      bg-[rgba(255,0,0,0.2)] backdrop-blur-[20px]
+      border border-red-400/40 text-white
+      transition-all duration-300
+      hover:scale-110 hover:bg-[rgba(255,0,0,0.35)] active:scale-95"
+  >
+    <FiTrash2 className="w-6 h-6" />
+  </button>
+
               <div className="overflow-hidden rounded-t-xl">
                 <img
                   src={item.img || "/coin.PNG"}
@@ -383,7 +399,7 @@ hover:scale-105 active:scale-95"
   group-hover:scale-110 group-hover:rotate-1"
                 />
               </div>
-
+<div className="flex flex-col flex-grow px-4 py-4">
               <div
                 className="text-lg sm:text-xl text-white px-4 mt-4 
   transition-all duration-300 
@@ -399,7 +415,7 @@ hover:scale-105 active:scale-95"
                 {item.desc}
                 <button
                   className="underline cursor-pointer"
-                  onClick={() => setSelectedNews(item)}
+                  onClick={() => navigate('/NewsDetails' , {state: {news : item}})}
                 >
                   Read More
                 </button>
@@ -415,9 +431,10 @@ hover:scale-105 active:scale-95"
                   <IoMdTime className="w-5 h-5" />
                   {item.time}
                 </div>
+                </div>
               </div>
               <div className="flex justify-between mx-2 mb-2 ">
-                <button
+                {/* <button
                   className="px-2 py-1 rounded-xl 
 bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] text-red-500
 transition-all duration-200 
@@ -425,9 +442,9 @@ hover:scale-105 active:scale-95"
                   onClick={() => handleDelete(index)}
                 >
                   Delete
-                </button>
+                </button> */}
 
-                <button
+                {/* <button
                   className="px-2 py-1 rounded-xl 
 bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px]
 transition-all duration-200 
@@ -439,7 +456,7 @@ hover:scale-105 active:scale-95"
                   }}
                 >
                   Update
-                </button>
+                </button> */}
               </div>
             </div>
           ))}

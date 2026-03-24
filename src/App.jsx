@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Route, Routes, useLocation } from "react-router-dom"; 
+import { Route, Routes, useLocation } from "react-router-dom";
 import Home from "./pages/Home.jsx";
 import Header from "./components/Header.jsx";
 import Footer from "./components/Footer.jsx";
@@ -9,6 +9,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Institution from "./pages/Institution.jsx";
 import News from "./pages/News.jsx";
 import Stake from "./components/Stake.jsx";
+import NewsDetails from "./pages/NewsDetails.jsx";
+import EditNews from "./pages/EditNews.jsx";
 
 const App = () => {
   gsap.registerPlugin(useGSAP, ScrollTrigger);
@@ -37,6 +39,8 @@ const App = () => {
         <Route path="/institution" element={<Institution />} />
         <Route path="/news" element={<News />} />
         <Route path="/stake" element={<Stake />} />
+        <Route path="/newsDetails" element={<NewsDetails />} />
+        <Route path="/editNews" element={<EditNews />} />
       </Routes>
       <Footer />
     </>
