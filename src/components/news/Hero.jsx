@@ -8,14 +8,19 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useNavigate } from "react-router";
 import { FiTrash2 } from "react-icons/fi";
 import useAddModalStore from "../../store/useAddModalStore";
-import AddModal from '../AddModal'
-import AddNewsForm from '../AddNewsForm'
+import AddModal from "../AddModal";
+import AddNewsForm from "../AddNewsForm";
+import DeleteModal from "../DeleteModal";
+import DeleteNews from "../DeleteNews";
+import useDeleteModalStore from "../../store/useDeleteModalStore";
 const Hero = () => {
   const [search, setSearch] = useState("");
   const [editingIndex, setEditingIndex] = useState(null);
   const [selectedNews, setSelectedNews] = useState(null);
   const navigate = useNavigate();
   const { openModal, closeModal } = useAddModalStore();
+ const { openDeleteModal } = useDeleteModalStore();
+
   const [newsData, setNewsData] = useState([
     {
       img: "/image.png",
@@ -204,6 +209,11 @@ This approach enables multi-layered reward generation. Advanced users benefit fr
       item.desc.toLowerCase().includes(search.toLowerCase()),
   );
 
+  const handleOpenDelete = (item, index) => {
+  setSelectedNews({ news: item, index })
+  openDeleteModal()
+}
+
   return (
     <div className="w-full flex items-center justify-center pt-16 md:pt-30 px-4 md:pb-0 pb-25">
       <div className="flex flex-col container mx-auto justify-center items-center gap-6">
@@ -302,9 +312,9 @@ This approach enables multi-layered reward generation. Advanced users benefit fr
             >
               <button
                 onClick={(e) => {
-                  e.stopPropagation();
-                  navigate("/admin/delete", { state: { news: item, index } });
-                }}
+  e.stopPropagation();
+  handleOpenDelete(item, index);
+}}
                 className="absolute top-3 right-3 z-10
                   opacity-0 group-hover:opacity-100
                   p-2 rounded-xl
@@ -345,7 +355,7 @@ This approach enables multi-layered reward generation. Advanced users benefit fr
           ))}
         </div>
 
-        {selectedNews && (
+        {/* {selectedNews && (
           <div className="fixed inset-0 bg-black/70 flex justify-center items-center z-50">
             <div className="bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] p-6 rounded-xl w-[90%] md:w-[500px]">
               <img
@@ -365,7 +375,7 @@ This approach enables multi-layered reward generation. Advanced users benefit fr
               </button>
             </div>
           </div>
-        )}
+        )} */}
       </div>
       <AddModal>
         <AddNewsForm
@@ -376,6 +386,19 @@ This approach enables multi-layered reward generation. Advanced users benefit fr
           closeModal={closeModal}
         />
       </AddModal>
+
+      
+<DeleteModal>
+  <DeleteNews
+    news={selectedNews?.news}
+    index={selectedNews?.index}
+    onDelete={(i) => {
+      const updated = [...newsData];
+      updated.splice(i, 1);
+      setNewsData(updated);
+    }}
+  />
+</DeleteModal>
     </div>
   );
 };
