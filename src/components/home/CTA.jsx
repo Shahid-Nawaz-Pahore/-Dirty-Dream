@@ -31,7 +31,7 @@ const CTA = () => {
                             e.preventDefault()
                             handleOutboundClick('https://stakee-stake.vercel.app')
                         }}
-                        className='bg-white text-black py-3 px-5 rounded-full flex items-center gap-2 hover:cursor-pointer hover:shadow-2xl'
+                        className='bg-white text-[#2FA8FF] py-3 px-5 rounded-full flex items-center gap-2 hover:cursor-pointer hover:shadow-2xl'
                     >
                         <h1>Start Staking</h1>
                         <BsArrowRight />

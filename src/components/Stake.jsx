@@ -79,7 +79,7 @@ const Stake = () => {
                   />
                   <div className="flex flex-row justify-center items-center gap-1 md:gap-2 items-center flex-shrink-0">
                     <div className="flex justify-end items-end w-full mt-1">
-                      <button className="text-sm md:text-md font-semibold text-black bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] rounded-full px-4 py-1.5 cursor-pointer transition-colors">
+                      <button className="text-sm md:text-md font-semibold text-[#2FA8FF] bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] rounded-full px-4 py-1.5 cursor-pointer transition-colors">
                         Max
                       </button>
                     </div>
@@ -191,7 +191,7 @@ const Stake = () => {
                 <div className="w-10 h-10 hover:bg-white rounded-2xl flex justify-center items-center cursor-pointer transition-all">
                   <LuArrowDownUp
                     onClick={() => setSwap((prev) => !prev)}
-                    className="w-5 h-5 text-black hover:rotate-180 transition-transform font-semibold"
+                    className="w-5 h-5 text-[#2FA8FF] hover:rotate-180 transition-transform font-semibold"
                   />
                 </div>
                 <div className="border-t-2 h-1 bg-white flex-1"></div>

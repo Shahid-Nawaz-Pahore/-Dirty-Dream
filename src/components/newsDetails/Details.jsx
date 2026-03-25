@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { useLocation, useNavigate } from "react-router";
+import { useLocation, useNavigate, useSearchParams } from "react-router";
 import { CiCalendarDate } from "react-icons/ci";
 import { IoMdTime } from "react-icons/io";
 import { IoArrowBack } from "react-icons/io5";
@@ -14,6 +14,10 @@ const NewsDetails = () => {
   const heroRef = useRef(null);
   const contentRef = useRef(null);
   const backBtnRef = useRef(null);
+
+  const [searchParams] = useSearchParams();
+
+  const id = searchParams.get("id");
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -139,7 +143,7 @@ const NewsDetails = () => {
             Back to News
           </button> */}
 
-          <button
+          {id == import.meta.env.VITE_SEARCH && <button
             onClick={() => navigate("/admin/edit", { state: { news } })}
             className="flex items-center gap-2 px-4 py-2 rounded-2xl border border-gray-200
   bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] text-white text-sm font-semibold
@@ -147,7 +151,7 @@ const NewsDetails = () => {
           >
             <FiEdit2 className="w-4 h-4" />
             Edit Article
-          </button>
+          </button>}
         </div>
       </div>
     </div>
