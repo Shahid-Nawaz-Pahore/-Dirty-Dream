@@ -7,13 +7,15 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useNavigate } from "react-router";
 import { FiTrash2 } from "react-icons/fi";
-
+import useAddModalStore from "../../store/useAddModalStore";
+import AddModal from '../AddModal'
+import AddNewsForm from '../AddNewsForm'
 const Hero = () => {
   const [search, setSearch] = useState("");
-  const [showAddForm, setShowAddForm] = useState(false);
   const [editingIndex, setEditingIndex] = useState(null);
   const [selectedNews, setSelectedNews] = useState(null);
   const navigate = useNavigate();
+  const { openModal, closeModal } = useAddModalStore();
   const [newsData, setNewsData] = useState([
     {
       img: "/image.png",
@@ -193,7 +195,7 @@ This approach enables multi-layered reward generation. Advanced users benefit fr
     }
 
     setNewItem({ img: "", head: "", desc: "", date: "", time: "" });
-    setShowAddForm(false);
+    // setShowAddForm(false);
   };
 
   const filteredData = newsData.filter(
@@ -205,13 +207,11 @@ This approach enables multi-layered reward generation. Advanced users benefit fr
   return (
     <div className="w-full flex items-center justify-center pt-16 md:pt-30 px-4 md:pb-0 pb-25">
       <div className="flex flex-col container mx-auto justify-center items-center gap-6">
-        
         <div className="flex justify-center items-center gap-2 flex-row w-full sm:w-40 h-9 rounded-3xl border border-gray-200 bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] headings">
           <LuBuilding2 className="w-4 h-4" />
           <h1 className="text-white text-sm text-center">Latest Updates</h1>
         </div>
 
-        
         <div className="flex flex-col gap-4 text-center px-2 headings">
           <h1 className="text-3xl sm:text-4xl md:text-5xl">News & Updates</h1>
           <h1 className="font-semibold text-base sm:text-lg md:text-xl">
@@ -219,7 +219,6 @@ This approach enables multi-layered reward generation. Advanced users benefit fr
           </h1>
         </div>
 
-        
         <div className="flex flex-col md:flex-row gap-4 w-full max-w-4xl">
           <div className="flex flex-row w-full h-12 md:h-14 border border-gray-200 bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] gap-4 justify-start items-center p-3 rounded-xl transition-all duration-300 focus-within:scale-[1.02] focus-within:border-white">
             <IoIosSearch className="w-5 h-5 md:w-6 md:h-6" />
@@ -234,14 +233,13 @@ This approach enables multi-layered reward generation. Advanced users benefit fr
 
           <button
             className="flex justify-center text-center items-center mt-1 bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] text-white border-gray-200 border rounded-2xl w-30 h-12 transition-all duration-200 hover:scale-105 active:scale-95"
-            onClick={() => setShowAddForm(!showAddForm)}
+            onClick={openModal}
           >
             Add News
           </button>
         </div>
 
-        
-        {showAddForm && (
+        {/* {showAddForm && (
           <div className="flex flex-col gap-2 w-full max-w-4xl p-4 bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] rounded-xl border border-gray-200 mt-4">
             <input
               type="text"
@@ -285,9 +283,8 @@ This approach enables multi-layered reward generation. Advanced users benefit fr
               {editingIndex !== null ? "Update News" : "Add News"}
             </button>
           </div>
-        )}
+        )} */}
 
-        
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full news-card items-start">
           {filteredData.map((item, index) => (
             <div
@@ -348,7 +345,6 @@ This approach enables multi-layered reward generation. Advanced users benefit fr
           ))}
         </div>
 
-        
         {selectedNews && (
           <div className="fixed inset-0 bg-black/70 flex justify-center items-center z-50">
             <div className="bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] p-6 rounded-xl w-[90%] md:w-[500px]">
@@ -371,6 +367,15 @@ This approach enables multi-layered reward generation. Advanced users benefit fr
           </div>
         )}
       </div>
+      <AddModal>
+        <AddNewsForm
+          newItem={newItem}
+          setNewItem={setNewItem}
+          saveNews={saveNews}
+          editingIndex={editingIndex}
+          closeModal={closeModal}
+        />
+      </AddModal>
     </div>
   );
 };
