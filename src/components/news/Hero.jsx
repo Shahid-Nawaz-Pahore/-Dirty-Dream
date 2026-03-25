@@ -205,11 +205,13 @@ This approach enables multi-layered reward generation. Advanced users benefit fr
   return (
     <div className="w-full flex items-center justify-center pt-16 md:pt-30 px-4 md:pb-0 pb-25">
       <div className="flex flex-col container mx-auto justify-center items-center gap-6">
-        <div className="flex justify-center items-center gap-2 flex-row w-full sm:w-40 h-9  rounded-3xl border border-gray-200 bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] headings">
+        
+        <div className="flex justify-center items-center gap-2 flex-row w-full sm:w-40 h-9 rounded-3xl border border-gray-200 bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] headings">
           <LuBuilding2 className="w-4 h-4" />
           <h1 className="text-white text-sm text-center">Latest Updates</h1>
         </div>
 
+        
         <div className="flex flex-col gap-4 text-center px-2 headings">
           <h1 className="text-3xl sm:text-4xl md:text-5xl">News & Updates</h1>
           <h1 className="font-semibold text-base sm:text-lg md:text-xl">
@@ -217,15 +219,9 @@ This approach enables multi-layered reward generation. Advanced users benefit fr
           </h1>
         </div>
 
-        <div className="flex flex-col md:flex-row gap-4 w-full max-w-4xl ">
-          <div
-            className="flex flex-row w-full h-12 md:h-14 
-border border-gray-200 
-bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px]
-gap-4 justify-start items-center p-3 rounded-xl
-transition-all duration-300
-focus-within:scale-[1.02] focus-within:border-white"
-          >
+        
+        <div className="flex flex-col md:flex-row gap-4 w-full max-w-4xl">
+          <div className="flex flex-row w-full h-12 md:h-14 border border-gray-200 bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] gap-4 justify-start items-center p-3 rounded-xl transition-all duration-300 focus-within:scale-[1.02] focus-within:border-white">
             <IoIosSearch className="w-5 h-5 md:w-6 md:h-6" />
             <input
               type="text"
@@ -237,14 +233,14 @@ focus-within:scale-[1.02] focus-within:border-white"
           </div>
 
           <button
-            className="flex justify-center text-center items-center mt-1 bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] text-white border-gray-200 border rounded-2xl w-30 h-12 transition-all duration-200 
-hover:scale-105 active:scale-95"
+            className="flex justify-center text-center items-center mt-1 bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] text-white border-gray-200 border rounded-2xl w-30 h-12 transition-all duration-200 hover:scale-105 active:scale-95"
             onClick={() => setShowAddForm(!showAddForm)}
           >
             Add News
           </button>
         </div>
 
+        
         {showAddForm && (
           <div className="flex flex-col gap-2 w-full max-w-4xl p-4 bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] rounded-xl border border-gray-200 mt-4">
             <input
@@ -252,14 +248,14 @@ hover:scale-105 active:scale-95"
               placeholder="Title"
               value={newItem.head}
               onChange={(e) => setNewItem({ ...newItem, head: e.target.value })}
-              className="p-2 rounded border  border-gray-200 bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] text-black"
+              className="p-2 rounded border border-gray-200 bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] text-black"
             />
             <input
               type="text"
               placeholder="Description"
               value={newItem.desc}
               onChange={(e) => setNewItem({ ...newItem, desc: e.target.value })}
-              className="p-2 rounded border  border-gray-200 bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] text-black"
+              className="p-2 rounded border border-gray-200 bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] text-black"
             />
             <input
               type="text"
@@ -282,7 +278,6 @@ hover:scale-105 active:scale-95"
               onChange={(e) => setNewItem({ ...newItem, time: e.target.value })}
               className="p-2 rounded border border-gray-200 bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] text-black"
             />
-
             <button
               onClick={saveNews}
               className="mt-2 px-4 py-2 bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] text-black rounded-xl"
@@ -292,19 +287,21 @@ hover:scale-105 active:scale-95"
           </div>
         )}
 
-        <div className="flex flex-wrap h-full gap-18 justify-center w-full news-card ">
+        
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full news-card items-start">
           {filteredData.map((item, index) => (
             <div
-              onClick={() => {
-                navigate("/NewsDetails", { state: { news: item } });
-              }}
-              className="relative w-full sm:w-[48%] lg:w-90 group 
-  bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] 
-  rounded-xl border border-gray-200
-  transition-all duration-500 ease-out
-  hover:-translate-y-3 hover:scale-[1.02]
-  hover:shadow-2xl hover:shadow-white/10"
               key={index}
+              onClick={() =>
+                navigate("/NewsDetails", { state: { news: item } })
+              }
+              className="relative w-full sm:w-full lg:w-84 group self-start
+                bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px]
+                rounded-xl border border-gray-200
+                transition-all duration-500 ease-out
+                hover:-translate-y-3 hover:scale-[1.02]
+                hover:shadow-2xl hover:shadow-white/10
+                cursor-pointer"
             >
               <button
                 onClick={(e) => {
@@ -312,12 +309,12 @@ hover:scale-105 active:scale-95"
                   navigate("/admin/delete", { state: { news: item, index } });
                 }}
                 className="absolute top-3 right-3 z-10
-      opacity-0 group-hover:opacity-100
-      p-2 rounded-xl
-      bg-[rgba(255,0,0,0.2)] backdrop-blur-[20px]
-      border border-red-400/40 text-white
-      transition-all duration-300
-      hover:scale-110 hover:bg-[rgba(255,0,0,0.35)] active:scale-95"
+                  opacity-0 group-hover:opacity-100
+                  p-2 rounded-xl
+                  bg-[rgba(255,0,0,0.2)] backdrop-blur-[20px]
+                  border border-red-400/40 text-white
+                  transition-all duration-300
+                  hover:scale-110 hover:bg-[rgba(255,0,0,0.35)] active:scale-95"
               >
                 <FiTrash2 className="w-6 h-6" />
               </button>
@@ -325,103 +322,54 @@ hover:scale-105 active:scale-95"
               <div className="overflow-hidden rounded-t-xl">
                 <img
                   src={item.img || "/coin.PNG"}
-                  className="w-full h-40 sm:h-44 object-cover 
-  transition-all duration-700 ease-out
-  group-hover:scale-110 group-hover:rotate-1"
+                  className="w-full h-40 sm:h-44 object-cover transition-all duration-700 ease-out group-hover:scale-110 group-hover:rotate-1"
                 />
               </div>
+
               <div className="flex flex-col flex-grow px-4 py-4">
-                <div
-                  className="text-lg sm:text-xl text-white px-4 mt-4 
-  transition-all duration-300 
-  "
-                >
+                <div className="text-lg sm:text-xl text-white px-4 mt-4 transition-all duration-300">
                   {item.head}
                 </div>
-
-                <div
-                  className="px-4 text-sm sm:text-md font-semibold mt-4 
-  transition-opacity duration-300 group-hover:opacity-80"
-                >
+                <div className="px-4 text-sm sm:text-md font-semibold mt-4 transition-opacity duration-300 group-hover:opacity-80">
                   {item.desc}
-                  {/* <button
-                    className="underline cursor-pointer"
-                    onClick={() =>
-                      navigate("/NewsDetails", { state: { news: item } })
-                    }
-                  >
-                    Read More
-                  </button> */}
                 </div>
-
                 <div className="flex flex-row flex-wrap gap-3 mt-4 mb-4">
-                  <div className="flex flex-row gap-1 px-4  text-sm font-semibold items-center">
+                  <div className="flex flex-row gap-1 px-4 text-sm font-semibold items-center">
                     <CiCalendarDate className="w-5 h-5" />
                     {item.date}
                   </div>
-
-                  <div className="flex flex-row gap-1 px-4  text-sm font-semibold items-center">
+                  <div className="flex flex-row gap-1 px-4 text-sm font-semibold items-center">
                     <IoMdTime className="w-5 h-5" />
                     {item.time}
                   </div>
                 </div>
               </div>
-              <div className="flex justify-between mx-2 mb-2 ">
-                {/* <button
-                  className="px-2 py-1 rounded-xl 
-bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] text-red-500
-transition-all duration-200 
-hover:scale-105 active:scale-95"
-                  onClick={() => handleDelete(index)}
-                >
-                  Delete
-                </button> */}
-
-                {/* <button
-                  className="px-2 py-1 rounded-xl 
-bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px]
-transition-all duration-200 
-hover:scale-105 active:scale-95"
-                  onClick={() => {
-                    setEditingIndex(index);
-                    setNewItem(newsData[index]);
-                    setShowAddForm(true);
-                  }}
-                >
-                  Update
-                </button> */}
-              </div>
             </div>
           ))}
-
-          {selectedNews && (
-            <div className="fixed inset-0 bg-black/70 flex justify-center items-center z-50">
-              <div className="bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] p-6 rounded-xl w-[90%] md:w-[500px]">
-                <img
-                  src={selectedNews.img}
-                  alt={selectedNews.head}
-                  className="w-full h-48 object-cover rounded-lg mb-4"
-                />
-
-                <h2 className="text-xl font-bold text-white mb-2">
-                  {selectedNews.head}
-                </h2>
-
-                <p className="text-gray-300 mb-4">{selectedNews.longDesc}</p>
-
-                <button
-                  className="px-2 py-1 rounded-2xl 
-bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px]
-transition-all duration-200 
-hover:scale-105 active:scale-95 text-black"
-                  onClick={() => setSelectedNews(null)}
-                >
-                  Close
-                </button>
-              </div>
-            </div>
-          )}
         </div>
+
+        
+        {selectedNews && (
+          <div className="fixed inset-0 bg-black/70 flex justify-center items-center z-50">
+            <div className="bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] p-6 rounded-xl w-[90%] md:w-[500px]">
+              <img
+                src={selectedNews.img}
+                alt={selectedNews.head}
+                className="w-full h-48 object-cover rounded-lg mb-4"
+              />
+              <h2 className="text-xl font-bold text-white mb-2">
+                {selectedNews.head}
+              </h2>
+              <p className="text-gray-300 mb-4">{selectedNews.longDesc}</p>
+              <button
+                className="px-2 py-1 rounded-2xl bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] transition-all duration-200 hover:scale-105 active:scale-95 text-black"
+                onClick={() => setSelectedNews(null)}
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
