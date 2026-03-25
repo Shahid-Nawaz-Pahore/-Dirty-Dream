@@ -42,6 +42,18 @@ const Hero = ({ data }) => {
     });
   }, [location.pathname]);
 
+  const handleOutboundClick = (url) => {
+    window.gtag('event', 'outbound_click', {
+      link_url: url,
+      link_text: 'Start Staking',  // whatever the button says
+    })
+
+    // Small delay to ensure gtag fires before navigation
+    setTimeout(() => {
+      window.open(url, '_blank')
+    }, 300)
+  }
+
   return (
     <div className="w-full h-screen flex items-center justify-center px-6">
       <div className="container flex items-start justify-start gap-10">
@@ -60,7 +72,10 @@ const Hero = ({ data }) => {
             <h1 className="text-xl font-medium">{data.desSub}</h1>
           </div>
           <button
-            onClick={() => window.open("https://stakee-stake.vercel.app","_blank")}
+            onClick={(e)=> {
+              e.preventDefault()
+              handleOutboundClick('https://stakee-stake.vercel.app')
+            }}
             className="text-xl font-medium bg-white text-black py-3 px-5 rounded-full cursor-pointer"
             id="content-3"
           >
