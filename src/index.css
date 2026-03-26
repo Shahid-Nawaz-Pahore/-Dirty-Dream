@@ -4,6 +4,11 @@
 *{
     font-family: 'Iosevka Charon';
 }
+@theme{
+  --color-btn: #279FFE;
+}
+
+
 
 .no-scrollbar::-webkit-scrollbar {
   display: none;

@@ -22,7 +22,7 @@ const Stats = ({stats}) => {
               <h1 className="text-4xl sm:text-4xl lg:text-5xl font-bold text-white">
                 <span>{s.prev && s.prev}</span><Counter value={s.value} point={s.point} /><span>{s.after && s.after}</span>
               </h1>
-              <h1 className="text-xl sm:text-xl font-semibold text-white">
+              <h1 className="text-xl sm:text-xl font-semibold text-blue-500">
                 {s.key}
               </h1>
             </div>

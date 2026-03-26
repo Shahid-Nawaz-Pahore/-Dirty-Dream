@@ -20,7 +20,7 @@ const DeleteNews = ({ news, index, onDelete }) => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-4 pt-16">
+    <div className="flex items-center justify-center px-4 pt-16">
       <div
         className="w-full max-w-md rounded-2xl border border-gray-200
         bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] p-8 flex flex-col gap-6"
@@ -55,7 +55,7 @@ const DeleteNews = ({ news, index, onDelete }) => {
           <button
             onClick={closeDeleteModal}
             className="flex-1 flex items-center justify-center gap-2 py-3 rounded-2xl
-              border border-gray-200 bg-[rgba(255,255,255,0.1)] text-white font-semibold
+               bg-btn text-white font-semibold
               transition-all duration-200 hover:scale-105 active:scale-95"
           >
             <IoArrowBack className="w-4 h-4" />

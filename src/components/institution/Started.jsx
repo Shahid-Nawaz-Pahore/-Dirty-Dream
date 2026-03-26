@@ -18,14 +18,14 @@ const Started = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-4 w-full sm:w-auto">
-              <div className="w-full sm:w-44 h-11 rounded-xl flex gap-2 justify-center items-center border border-white hover:text-[#2FA8FF] hover:bg-white transition-all duration-500">
+              <div className="w-full sm:w-44 h-11 cursor-pointer rounded-2xl text-white bg-btn transform duration-300 hover:scale-102 flex gap-2 justify-center items-center">
                 <PiHeadphonesBold className="w-5 h-5" />
                 <h1 className="font-semibold text-sm">
                   Contact Sales Team
                 </h1>
               </div>
 
-              <div className="w-full sm:w-44 h-11 rounded-xl flex gap-2 justify-center items-center border bg-white text-[#2FA8FF] border-white hover:text-white hover:bg-transparent transition-all duration-500">
+              <div className="w-full sm:w-44 h-11 flex gap-2 cursor-pointer justify-center items-center transform duration-300 hover:scale-102 bg-btn text-white rounded-2xl">
                 <h1 className="font-semibold text-sm  ">
                   Request Documentation
                 </h1>
