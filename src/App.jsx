@@ -13,7 +13,6 @@ import News from "./pages/News.jsx";
 import Stake from "./components/Stake.jsx";
 import NewsDetails from "./pages/NewsDetails.jsx";
 import EditNews from "./pages/EditNews.jsx";
-import DeleteNews from "./pages/DeleteNews.jsx";
 import { LuLoader } from "react-icons/lu";
 
 const App = () => {
@@ -68,10 +67,12 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/institution" element={<Institution />} />
           <Route path="/news" element={<News />} />
+          <Route path="/news/admin" element={<News />} />
           <Route path="/stake" element={<Stake />} />
           <Route path="/newsDetails" element={<NewsDetails />} />
+          <Route path="/newsDetails/admin" element={<NewsDetails />} />
           <Route path="/admin/edit" element={<EditNews />} />
-          <Route path="/admin/delete" element={<DeleteNews />} />
+          {/* <Route path="/admin/delete" element={<DeleteNews />} /> */}
         </Routes>
         <Footer />
       </div>
