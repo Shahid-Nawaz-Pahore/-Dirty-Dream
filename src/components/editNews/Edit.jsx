@@ -154,7 +154,7 @@ const Edit = ({ onUpdate }) => {
               alt="Preview"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-black/30 flex items-end p-4">
+            <div className="absolute inset-0 bg-[#2FA8FF]/30 flex items-end p-4">
               <span className="text-xs font-bold uppercase tracking-widest text-white bg-[rgba(0,0,0,0.4)] px-3 py-1 rounded-full backdrop-blur-sm">
                 Image Preview
               </span>

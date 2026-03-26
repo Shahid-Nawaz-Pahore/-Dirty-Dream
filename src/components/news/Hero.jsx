@@ -5,7 +5,7 @@ import { CiCalendarDate } from "react-icons/ci";
 import { IoMdTime } from "react-icons/io";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useNavigate } from "react-router";
+import { useLocation, useNavigate, useSearchParams } from "react-router";
 import { FiTrash2 } from "react-icons/fi";
 import useAddModalStore from "../../store/useAddModalStore";
 import AddModal from "../AddModal";
@@ -20,6 +20,10 @@ const Hero = () => {
   const navigate = useNavigate();
   const { openModal, closeModal } = useAddModalStore();
  const { openDeleteModal } = useDeleteModalStore();
+
+  const [searchParams] = useSearchParams();
+
+  const id = searchParams.get("id");
 
   const [newsData, setNewsData] = useState([
     {
@@ -256,39 +260,39 @@ This approach enables multi-layered reward generation. Advanced users benefit fr
               placeholder="Title"
               value={newItem.head}
               onChange={(e) => setNewItem({ ...newItem, head: e.target.value })}
-              className="p-2 rounded border border-gray-200 bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] text-black"
+              className="p-2 rounded border border-gray-200 bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] text-[#2FA8FF]"
             />
             <input
               type="text"
               placeholder="Description"
               value={newItem.desc}
               onChange={(e) => setNewItem({ ...newItem, desc: e.target.value })}
-              className="p-2 rounded border border-gray-200 bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] text-black"
+              className="p-2 rounded border border-gray-200 bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] text-[#2FA8FF]"
             />
             <input
               type="text"
               placeholder="Image URL"
               value={newItem.img}
               onChange={(e) => setNewItem({ ...newItem, img: e.target.value })}
-              className="p-2 rounded border border-gray-200 bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] text-black"
+              className="p-2 rounded border border-gray-200 bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] text-[#2FA8FF]"
             />
             <input
               type="text"
               placeholder="Date"
               value={newItem.date}
               onChange={(e) => setNewItem({ ...newItem, date: e.target.value })}
-              className="p-2 rounded border border-gray-200 bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] text-black"
+              className="p-2 rounded border border-gray-200 bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] text-[#2FA8FF]"
             />
             <input
               type="text"
               placeholder="Time"
               value={newItem.time}
               onChange={(e) => setNewItem({ ...newItem, time: e.target.value })}
-              className="p-2 rounded border border-gray-200 bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] text-black"
+              className="p-2 rounded border border-gray-200 bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] text-[#2FA8FF]"
             />
             <button
               onClick={saveNews}
-              className="mt-2 px-4 py-2 bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] text-black rounded-xl"
+              className="mt-2 px-4 py-2 bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] text-[#2FA8FF] rounded-xl"
             >
               {editingIndex !== null ? "Update News" : "Add News"}
             </button>
@@ -300,7 +304,7 @@ This approach enables multi-layered reward generation. Advanced users benefit fr
             <div
               key={index}
               onClick={() =>
-                navigate("/NewsDetails", { state: { news: item } })
+                navigate(`/NewsDetails${id == import.meta.env.VITE_SEARCH ? `/admin?id=${id}` : ""}`, { state: { news: item } })
               }
               className="relative w-full sm:w-full lg:w-84 group self-start
                 bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px]
@@ -310,7 +314,7 @@ This approach enables multi-layered reward generation. Advanced users benefit fr
                 hover:shadow-2xl hover:shadow-white/10
                 cursor-pointer"
             >
-              <button
+              {id == import.meta.env.VITE_SEARCH && <button
                 onClick={(e) => {
   e.stopPropagation();
   handleOpenDelete(item, index);
@@ -324,7 +328,7 @@ This approach enables multi-layered reward generation. Advanced users benefit fr
                   hover:scale-110 hover:bg-[rgba(255,0,0,0.35)] active:scale-95"
               >
                 <FiTrash2 className="w-6 h-6" />
-              </button>
+              </button>}
 
               <div className="overflow-hidden rounded-t-xl">
                 <img
@@ -368,7 +372,7 @@ This approach enables multi-layered reward generation. Advanced users benefit fr
               </h2>
               <p className="text-gray-300 mb-4">{selectedNews.longDesc}</p>
               <button
-                className="px-2 py-1 rounded-2xl bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] transition-all duration-200 hover:scale-105 active:scale-95 text-black"
+                className="px-2 py-1 rounded-2xl bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] transition-all duration-200 hover:scale-105 active:scale-95 text-[#2FA8FF]"
                 onClick={() => setSelectedNews(null)}
               >
                 Close

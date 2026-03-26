@@ -76,7 +76,7 @@ const Hero = ({ data }) => {
               e.preventDefault()
               handleOutboundClick('https://stakee-stake.vercel.app')
             }}
-            className="text-xl font-medium bg-white text-black py-3 px-5 rounded-full cursor-pointer"
+            className="text-xl font-medium bg-white text-[#2FA8FF] py-3 px-5 rounded-full cursor-pointer"
             id="content-3"
           >
             Start Staking
