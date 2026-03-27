@@ -44,7 +44,7 @@ const Solutions = () => {
           <h1 className="md:text-6xl text-4xl font-bold textoutline-light">
             Tailored Solutions
           </h1>
-          <h1 className="md:text-2xl text-lg leading-relaxed textoutline-light">
+          <h1 className="md:text-2xl text-lg leading-relaxed text-single">
             Custom solutions for every type of institutional client
           </h1>
         </div>

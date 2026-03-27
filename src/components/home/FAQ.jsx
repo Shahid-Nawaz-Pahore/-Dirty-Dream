@@ -66,7 +66,7 @@ const FAQ = () => {
                     })
                   }
                 >
-                  <h1>{item.question}</h1>
+                  <h1 className="text-single">{item.question}</h1>
                   <FaChevronDown
                     className={`transition-all duration-700 ${faqToggle[key] ? "rotate-180" : "rotate-0"}`}
                   />
@@ -84,7 +84,7 @@ const FAQ = () => {
                     mb-2
                   `}
                 >
-                  <h1>{item.answer}</h1>
+                  <h1 className="text-single">{item.answer}</h1>
                 </div>
               </div>
             );

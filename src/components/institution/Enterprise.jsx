@@ -22,7 +22,7 @@ const Enterprise = () => {
             <h1 className="md:text-6xl text-4xl font-bold textoutline-light">
               Enterprise Features
             </h1>
-            <p className="md:text-2xl text-lg leading-relaxed textoutline-light">
+            <p className="md:text-2xl text-lg leading-relaxed text-single">
               Custom solutions for every type of institutional client
             </p>
           </div>

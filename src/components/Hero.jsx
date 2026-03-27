@@ -68,15 +68,15 @@ const Hero = ({ data }) => {
             <h1 className="font-bold textoutline-light">{data.sub}</h1>
           </div>
           <div id="content-2">
-            <h1 className="text-xl font-medium textoutline-light">{data.desMain}</h1>
-            <h1 className="text-xl font-medium textoutline-light">{data.desSub}</h1>
+            <h1 className="text-xl font-medium text-single">{data.desMain}</h1>
+            <h1 className="text-xl font-medium text-single">{data.desSub}</h1>
           </div>
           <button
             onClick={(e)=> {
               e.preventDefault()
               handleOutboundClick('https://stakee-stake.vercel.app')
             }}
-            className="text-xl font-medium bg-btn text-white py-3 px-5 rounded-full cursor-pointer"
+            className="text-single text-xl font-medium bg-btn text-white py-3 px-5 rounded-full cursor-pointer"
             id="content-3"
           >
             Start Staking
