@@ -19,10 +19,10 @@ const Enterprise = () => {
       <div className="container flex justify-center text-white">
         <div className="flex flex-col w-full gap-10">
           <div className="flex flex-col text-center gap-2 head">
-            <h1 className="md:text-6xl text-4xl font-bold">
+            <h1 className="md:text-6xl text-4xl font-bold textoutline-light">
               Enterprise Features
             </h1>
-            <p className="md:text-2xl text-lg leading-relaxed">
+            <p className="md:text-2xl text-lg leading-relaxed text-single">
               Custom solutions for every type of institutional client
             </p>
           </div>
@@ -33,7 +33,7 @@ const Enterprise = () => {
                 key={index}
                 className="flex gap-4 text-sm font-semibold"
               >
-                <BsCheckCircle className="w-4 h-4 text-[#37B3FE] mt-1 shrink-0 transition-transform group-hover:scale-110" />
+                <BsCheckCircle className="w-4 h-4 text-white mt-1 shrink-0 transition-transform group-hover:scale-110" />
                 <p className="script">{item.text}</p>
               </div>
             ))}

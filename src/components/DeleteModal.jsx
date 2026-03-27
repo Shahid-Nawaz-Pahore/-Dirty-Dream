@@ -11,7 +11,7 @@ const DeleteModal = ({ children }) => {
         {/* Close Button */}
         <button
           onClick={closeDeleteModal}
-          className="text-white text-2xl absolute top-4 right-6"
+          className="text-white text-2xl absolute top-4 cursor-pointer right-6"
         >
           ✖
         </button>

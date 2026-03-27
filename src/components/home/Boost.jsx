@@ -69,7 +69,7 @@ const Boost = () => {
         <div className="w-full bg-[hsla(0,0%,100%,0)] px-6 py-8 backdrop-blur-[20px] border border-gray-300 rounded-2xl">
           <div className="flex flex-col md:flex-row justify-between">
             <div className="flex flex-col gap-6 md:w-[70%]">
-              <h1 className="text-white text-4xl font-semibold">
+              <h1 className="text-white text-4xl font-semibold text-single">
                 {selected.title}
               </h1>
 

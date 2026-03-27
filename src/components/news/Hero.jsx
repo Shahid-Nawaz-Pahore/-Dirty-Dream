@@ -19,7 +19,7 @@ const Hero = () => {
   const [selectedNews, setSelectedNews] = useState(null);
   const navigate = useNavigate();
   const { openModal, closeModal } = useAddModalStore();
- const { openDeleteModal } = useDeleteModalStore();
+  const { openDeleteModal } = useDeleteModalStore();
 
   const [searchParams] = useSearchParams();
 
@@ -214,12 +214,12 @@ This approach enables multi-layered reward generation. Advanced users benefit fr
   );
 
   const handleOpenDelete = (item, index) => {
-  setSelectedNews({ news: item, index })
-  openDeleteModal()
-}
+    setSelectedNews({ news: item, index });
+    openDeleteModal();
+  };
 
   return (
-    <div className="w-full flex items-center justify-center pt-16 md:pt-30 px-4 md:pb-0 pb-25">
+    <div className="w-full flex items-center justify-center pt-26 md:pt-30 px-4 md:pb-0">
       <div className="flex flex-col container mx-auto justify-center items-center gap-6">
         <div className="flex justify-center items-center gap-2 flex-row w-full sm:w-40 h-9 rounded-3xl border border-gray-200 bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] headings">
           <LuBuilding2 className="w-4 h-4" />
@@ -227,8 +227,10 @@ This approach enables multi-layered reward generation. Advanced users benefit fr
         </div>
 
         <div className="flex flex-col gap-4 text-center px-2 headings">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl">News & Updates</h1>
-          <h1 className="font-semibold text-base sm:text-lg md:text-xl">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl text-white font-extrabold textoutline-light">
+            News & Updates
+          </h1>
+          <h1 className="font-semibold text-base sm:text-lg md:text-xl text-single">
             Stay informed about the latest developments and announcements
           </h1>
         </div>
@@ -245,90 +247,55 @@ This approach enables multi-layered reward generation. Advanced users benefit fr
             />
           </div>
 
-          <button
-            className="flex justify-center text-center items-center mt-1 bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] text-white border-gray-200 border rounded-2xl w-30 h-12 transition-all duration-200 hover:scale-105 active:scale-95"
-            onClick={openModal}
-          >
-            Add News
-          </button>
+          {String(id) === import.meta.env.VITE_SEARCH && (
+            <button
+              className="flex justify-center text-center cursor-pointer items-center font-bold mt-1 bg-btn text-white border-gray-200 border rounded-2xl w-30 h-12 transition-all duration-200 hover:scale-105 active:scale-95"
+              onClick={openModal}
+            >
+              Add News
+            </button>
+          )}
         </div>
 
-        {/* {showAddForm && (
-          <div className="flex flex-col gap-2 w-full max-w-4xl p-4 bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] rounded-xl border border-gray-200 mt-4">
-            <input
-              type="text"
-              placeholder="Title"
-              value={newItem.head}
-              onChange={(e) => setNewItem({ ...newItem, head: e.target.value })}
-              className="p-2 rounded border border-gray-200 bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] text-[#2FA8FF]"
-            />
-            <input
-              type="text"
-              placeholder="Description"
-              value={newItem.desc}
-              onChange={(e) => setNewItem({ ...newItem, desc: e.target.value })}
-              className="p-2 rounded border border-gray-200 bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] text-[#2FA8FF]"
-            />
-            <input
-              type="text"
-              placeholder="Image URL"
-              value={newItem.img}
-              onChange={(e) => setNewItem({ ...newItem, img: e.target.value })}
-              className="p-2 rounded border border-gray-200 bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] text-[#2FA8FF]"
-            />
-            <input
-              type="text"
-              placeholder="Date"
-              value={newItem.date}
-              onChange={(e) => setNewItem({ ...newItem, date: e.target.value })}
-              className="p-2 rounded border border-gray-200 bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] text-[#2FA8FF]"
-            />
-            <input
-              type="text"
-              placeholder="Time"
-              value={newItem.time}
-              onChange={(e) => setNewItem({ ...newItem, time: e.target.value })}
-              className="p-2 rounded border border-gray-200 bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] text-[#2FA8FF]"
-            />
-            <button
-              onClick={saveNews}
-              className="mt-2 px-4 py-2 bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] text-[#2FA8FF] rounded-xl"
-            >
-              {editingIndex !== null ? "Update News" : "Add News"}
-            </button>
-          </div>
-        )} */}
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full news-card items-start">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full news-card items-start">
           {filteredData.map((item, index) => (
             <div
               key={index}
               onClick={() =>
-                navigate(`/NewsDetails${id == import.meta.env.VITE_SEARCH ? `/admin?id=${id}` : ""}`, { state: { news: item } })
+                navigate(
+                  `/NewsDetails${
+                    String(id) === import.meta.env.VITE_SEARCH
+                      ? `/admin?id=${id}`
+                      : ""
+                  }`,
+                  { state: { news: item } },
+                )
               }
               className="relative w-full sm:w-full lg:w-84 group self-start
-                bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px]
-                rounded-xl border border-gray-200
-                transition-all duration-500 ease-out
-                hover:-translate-y-3 hover:scale-[1.02]
-                hover:shadow-2xl hover:shadow-white/10
-                cursor-pointer"
+    bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px]
+    rounded-xl border border-gray-200
+    transition-all duration-500 ease-out
+    hover:-translate-y-3 hover:scale-[1.02]
+    hover:shadow-2xl hover:shadow-white/10
+    cursor-pointer"
             >
-              {id == import.meta.env.VITE_SEARCH && <button
-                onClick={(e) => {
-  e.stopPropagation();
-  handleOpenDelete(item, index);
-}}
-                className="absolute top-3 right-3 z-10
-                  opacity-0 group-hover:opacity-100
-                  p-2 rounded-xl
-                  bg-[rgba(255,0,0,0.2)] backdrop-blur-[20px]
-                  border border-red-400/40 text-white
-                  transition-all duration-300
-                  hover:scale-110 hover:bg-[rgba(255,0,0,0.35)] active:scale-95"
-              >
-                <FiTrash2 className="w-6 h-6" />
-              </button>}
+              {String(id) === import.meta.env.VITE_SEARCH && (
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleOpenDelete(item, index);
+                  }}
+                  className="absolute top-3 right-3 z-10
+        opacity-0 group-hover:opacity-100
+        p-2 rounded-xl
+        bg-[rgba(255,0,0,0.2)] backdrop-blur-[20px]
+        border border-red-400/40 text-white
+        transition-all duration-300
+        hover:scale-110 hover:bg-[rgba(255,0,0,0.35)] active:scale-95"
+                >
+                  <FiTrash2 className="w-6 h-6" />
+                </button>
+              )}
 
               <div className="overflow-hidden rounded-t-xl">
                 <img
@@ -338,13 +305,15 @@ This approach enables multi-layered reward generation. Advanced users benefit fr
               </div>
 
               <div className="flex flex-col flex-grow px-4 py-4">
-                <div className="text-lg sm:text-xl text-white px-4 mt-4 transition-all duration-300">
+                <div className="text-lg sm:text-xl text-white px-4 mt-4 transition-all duration-300 text-single">
                   {item.head}
                 </div>
+
                 <div className="px-4 text-sm sm:text-md font-semibold mt-4 transition-opacity duration-300 group-hover:opacity-80">
                   {item.desc}
                 </div>
-                <div className="flex flex-row flex-wrap gap-3 mt-4 mb-4">
+
+                <div className="flex flex-row flex-wrap gap-3 mt-4">
                   <div className="flex flex-row gap-1 px-4 text-sm font-semibold items-center">
                     <CiCalendarDate className="w-5 h-5" />
                     {item.date}
@@ -391,18 +360,17 @@ This approach enables multi-layered reward generation. Advanced users benefit fr
         />
       </AddModal>
 
-      
-<DeleteModal>
-  <DeleteNews
-    news={selectedNews?.news}
-    index={selectedNews?.index}
-    onDelete={(i) => {
-      const updated = [...newsData];
-      updated.splice(i, 1);
-      setNewsData(updated);
-    }}
-  />
-</DeleteModal>
+      <DeleteModal>
+        <DeleteNews
+          news={selectedNews?.news}
+          index={selectedNews?.index}
+          onDelete={(i) => {
+            const updated = [...newsData];
+            updated.splice(i, 1);
+            setNewsData(updated);
+          }}
+        />
+      </DeleteModal>
     </div>
   );
 };

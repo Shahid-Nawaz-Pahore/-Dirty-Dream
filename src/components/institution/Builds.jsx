@@ -41,42 +41,33 @@ const Builds = () => {
   ];
 
   return (
-    <div className="w-full flex items-center justify-center pt-16 px-6">
-      <div className="container flex justify-center text-white">
-        <div className="flex flex-col">
-          <div className="flex flex-col text-center gap-2 line">
-            <h1 className="md:text-6xl text-4xl font-bold">
-              Built for Institutions
-            </h1>
-            <h1 className="md:text-2xl text-lg leading-relaxed">
-              Enterprise-grade infrastructure designed to meet the unique needs of{" "}
-              <br /> institutional clients
-            </h1>
-          </div>
-
-          <div className="flex md:justify-between justify-center flex-wrap gap-8 pt-10 card">
-            {data.map((item, index) => (
-              <div
-                key={index}
-                className="md:w-76 w-full group p-6 rounded-xl flex flex-col gap-3 border transition bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] hover:scale-105 duration-500"
-              >
-                <div
-                  className="w-8 h-8 rounded-xl flex justify-center items-center transition-transform duration-300"
-                >
-                  {item.icon}
-                </div>
-
-                <h2 className="text-xl font-bold transition-transform">
-                  {item.heading}
-                </h2>
-
-                <p className="text-md font-semibold">{item.para}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+  <div className="grid gap-8 pt-10 card 
+  grid-cols-1 px-4
+  sm:grid-cols-2 
+  lg:grid-cols-3 
+  xl:grid-cols-4">
+  
+  {data.map((item, index) => (
+    <div
+      key={index}
+      className="group p-6 rounded-xl flex flex-col gap-3 border 
+      transition bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] 
+      hover:scale-105 duration-500"
+    >
+      <div className="w-8 h-8 rounded-xl flex justify-center items-center">
+        {item.icon}
       </div>
+
+      <h2 className="text-xl font-bold text-single">
+        {item.heading}
+      </h2>
+
+      <p className="text-md font-semibold">
+        {item.para}
+      </p>
     </div>
+  ))}
+</div>
   );
 };
 

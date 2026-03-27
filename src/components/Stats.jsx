@@ -19,10 +19,10 @@ const Stats = ({stats}) => {
         <div className="flex flex-col sm:flex-row gap-7 sm:gap-10 md:gap-20 lg:gap-32 py-4">
           {stats.map((s,index) => (
             <div className="flex flex-col justify-center items-center text-center gap-1">
-              <h1 className="text-4xl sm:text-4xl lg:text-5xl font-bold text-white">
+              <h1 className="text-4xl sm:text-4xl lg:text-5xl font-bold text-white text-single">
                 <span>{s.prev && s.prev}</span><Counter value={s.value} point={s.point} /><span>{s.after && s.after}</span>
               </h1>
-              <h1 className="text-xl sm:text-xl font-semibold text-white">
+              <h1 className="text-xl sm:text-xl font-semibold text-white textoutline-light">
                 {s.key}
               </h1>
             </div>
