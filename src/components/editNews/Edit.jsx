@@ -107,7 +107,7 @@ const Edit = ({ onUpdate }) => {
         </p>
         <button
           onClick={() => navigate(-1)}
-          className="flex items-center gap-2 px-5 py-2 rounded-2xl border border-gray-200
+          className="flex items-center gap-2 px-5 py-2 rounded-2xl border border-gray-200 cursor-pointer
             bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] text-white
             transition-all duration-200 hover:scale-105 active:scale-95"
         >
@@ -126,7 +126,7 @@ const Edit = ({ onUpdate }) => {
             onClick={() => navigate(-1)}
             className="flex items-center gap-2 w-fit px-4 py-2 rounded-2xl border border-gray-200
               bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] text-white text-sm font-semibold
-              transition-all duration-200 hover:scale-105 active:scale-95"
+              transition-all duration-200 hover:scale-105 cursor-pointer active:scale-95"
           >
             <IoArrowBack className="w-4 h-4" />
             Back
@@ -138,10 +138,10 @@ const Edit = ({ onUpdate }) => {
               <span className="text-white text-sm">Edit Article</span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl text-white font-bold">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl text-white font-bold textoutline-light">
               Update News
             </h1>
-            <p className="text-white font-semibold text-sm sm:text-base">
+            <p className="text-white font-semibold text-sm sm:text-base textoutline-light">
               Make changes to the article below and save when done.
             </p>
           </div>
@@ -248,7 +248,7 @@ const Edit = ({ onUpdate }) => {
               onClick={() => navigate(-1)}
               className="flex items-center justify-center gap-2 px-6 py-3 rounded-2xl border border-gray-200
               bg-[rgba(255,255,255,0.1)] backdrop-blur-[20px] text-white font-semibold
-              transition-all duration-200 hover:scale-105 active:scale-95 hover:bg-[rgba(255,255,255,0.2)]"
+              transition-all cursor-pointer duration-200 hover:scale-105 active:scale-95 hover:bg-[rgba(255,255,255,0.2)]"
             >
               Cancel
             </button>
@@ -257,7 +257,7 @@ const Edit = ({ onUpdate }) => {
               onClick={handleSave}
               disabled={saved}
               className={`flex items-center justify-center gap-2 px-8 py-3 rounded-2xl border font-semibold
-              backdrop-blur-[20px] transition-all duration-200 hover:scale-105 active:scale-95
+              backdrop-blur-[20px] cursor-pointer transition-all duration-200 hover:scale-105 active:scale-95
               ${
                 saved
                   ? "border-green-400/60 bg-[rgba(0,255,100,0.15)] text-green-400"

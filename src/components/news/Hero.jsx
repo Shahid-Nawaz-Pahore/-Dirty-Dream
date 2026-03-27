@@ -219,7 +219,7 @@ This approach enables multi-layered reward generation. Advanced users benefit fr
   };
 
   return (
-    <div className="w-full flex items-center justify-center pt-16 md:pt-30 px-4 md:pb-0 pb-25">
+    <div className="w-full flex items-center justify-center pt-26 md:pt-30 px-4 md:pb-0">
       <div className="flex flex-col container mx-auto justify-center items-center gap-6">
         <div className="flex justify-center items-center gap-2 flex-row w-full sm:w-40 h-9 rounded-3xl border border-gray-200 bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] headings">
           <LuBuilding2 className="w-4 h-4" />
@@ -227,10 +227,10 @@ This approach enables multi-layered reward generation. Advanced users benefit fr
         </div>
 
         <div className="flex flex-col gap-4 text-center px-2 headings">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl text-blue-500">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl text-white font-extrabold textoutline-light">
             News & Updates
           </h1>
-          <h1 className="font-semibold text-base sm:text-lg md:text-xl">
+          <h1 className="font-semibold text-base sm:text-lg md:text-xl text-single">
             Stay informed about the latest developments and announcements
           </h1>
         </div>
@@ -247,12 +247,14 @@ This approach enables multi-layered reward generation. Advanced users benefit fr
             />
           </div>
 
-          <button
-            className="flex justify-center text-center items-center mt-1 bg-btn text-white border-gray-200 border rounded-2xl w-30 h-12 transition-all duration-200 hover:scale-105 active:scale-95"
-            onClick={openModal}
-          >
-            Add News
-          </button>
+          {String(id) === import.meta.env.VITE_SEARCH && (
+            <button
+              className="flex justify-center text-center cursor-pointer items-center font-bold mt-1 bg-btn text-white border-gray-200 border rounded-2xl w-30 h-12 transition-all duration-200 hover:scale-105 active:scale-95"
+              onClick={openModal}
+            >
+              Add News
+            </button>
+          )}
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full news-card items-start">
@@ -303,7 +305,7 @@ This approach enables multi-layered reward generation. Advanced users benefit fr
               </div>
 
               <div className="flex flex-col flex-grow px-4 py-4">
-                <div className="text-lg sm:text-xl text-white px-4 mt-4 transition-all duration-300">
+                <div className="text-lg sm:text-xl text-white px-4 mt-4 transition-all duration-300 text-single">
                   {item.head}
                 </div>
 
@@ -311,7 +313,7 @@ This approach enables multi-layered reward generation. Advanced users benefit fr
                   {item.desc}
                 </div>
 
-                <div className="flex flex-row flex-wrap gap-3 mt-4 mb-4">
+                <div className="flex flex-row flex-wrap gap-3 mt-4">
                   <div className="flex flex-row gap-1 px-4 text-sm font-semibold items-center">
                     <CiCalendarDate className="w-5 h-5" />
                     {item.date}

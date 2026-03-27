@@ -13,7 +13,7 @@ const AddModal = ({ children }) => {
         {/* Close Button */}
         <button
           onClick={closeModal}
-          className="text-white text-2xl absolute top-4 right-6"
+          className="text-white text-2xl absolute top-4 right-6 cursor-pointer"
         >
           ✖
         </button>

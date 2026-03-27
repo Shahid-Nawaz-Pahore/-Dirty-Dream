@@ -105,7 +105,7 @@ const AddNewsForm = ({
           closeModal();
         }}
         className="mt-2 py-3 rounded-xl font-medium 
-        bg-btn  transition-all duration-300 
+        bg-btn  transition-all duration-300 cursor-pointer
         text-white shadow-lg hover:scale-[1.02]"
       >
         {editingIndex !== null ? "Update News" : "Publish News"}

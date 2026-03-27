@@ -64,12 +64,12 @@ const Hero = ({ data }) => {
         </div>
         <div className="md:text-6xl text-5xl flex flex-col items-start justify-between gap-10">
           <div id="content-1">
-            <h1 className="font-bold">{data.main} </h1>
-            <h1 className="font-bold">{data.sub}</h1>
+            <h1 className="font-extrabold textoutline-light">{data.main} </h1>
+            <h1 className="font-bold textoutline-light">{data.sub}</h1>
           </div>
           <div id="content-2">
-            <h1 className="text-xl font-medium">{data.desMain}</h1>
-            <h1 className="text-xl font-medium">{data.desSub}</h1>
+            <h1 className="text-xl font-medium textoutline-light">{data.desMain}</h1>
+            <h1 className="text-xl font-medium textoutline-light">{data.desSub}</h1>
           </div>
           <button
             onClick={(e)=> {

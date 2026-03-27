@@ -96,7 +96,7 @@ const BoostIndicator = ({ className = '', setSelected , selected }) => {
         <div
           key={item.id}
           ref={el => (linkRefs.current[index] = el)}
-          className='md:text-xl text-lg  py-2 px-5 relative z-10 hover:cursor-pointer'
+          className='md:text-xl text-lg  py-2 px-5 relative z-10 hover:cursor-pointer text-single font-bold'
           onClick={() => setSelected(item)}
         >
           {item.id.split("")[0].toLocaleUpperCase()+item.id.slice(1)}

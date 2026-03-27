@@ -47,7 +47,7 @@ const NavIndicator = ({ className = '' }) => {
           key={item.path}
           to={item.path}
           ref={el => (linkRefs.current[index] = el)}
-          className='py-2 px-5 relative z-10'
+          className='py-2 px-5 relative z-10 text-single font-bold'
         >
           {item.label}
         </NavLink>

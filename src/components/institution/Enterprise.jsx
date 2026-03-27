@@ -19,10 +19,10 @@ const Enterprise = () => {
       <div className="container flex justify-center text-white">
         <div className="flex flex-col w-full gap-10">
           <div className="flex flex-col text-center gap-2 head">
-            <h1 className="md:text-6xl text-4xl font-bold">
+            <h1 className="md:text-6xl text-4xl font-bold textoutline-light">
               Enterprise Features
             </h1>
-            <p className="md:text-2xl text-lg leading-relaxed">
+            <p className="md:text-2xl text-lg leading-relaxed textoutline-light">
               Custom solutions for every type of institutional client
             </p>
           </div>

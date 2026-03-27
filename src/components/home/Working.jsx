@@ -89,7 +89,7 @@ hover:-translate-y-1 px-4 py-4"
               >
                 <div className="flex flex-row justify-between w-full">
                   <div className="w-14 h-14 border border-gray-200 rounded-2xl flex justify-center items-center">
-                    <p className="text-sm sm:text-base font-semibold text-white ">
+                    <p className="text-sm sm:text-base font-semibold text-white text-single">
                       {item.icon}
                     </p>
                   </div>
@@ -98,7 +98,7 @@ hover:-translate-y-1 px-4 py-4"
                     <GoDotFill className="w-4 h-4 text-white mt-3" />
                   </div>
                 </div>
-                <p className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+                <p className="text-2xl sm:text-3xl font-bold text-white tracking-tight text-single">
                   {item.title}
                 </p>
 

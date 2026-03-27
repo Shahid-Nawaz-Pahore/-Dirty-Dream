@@ -58,7 +58,7 @@ const Builds = () => {
         {item.icon}
       </div>
 
-      <h2 className="text-xl font-bold">
+      <h2 className="text-xl font-bold text-single">
         {item.heading}
       </h2>
 

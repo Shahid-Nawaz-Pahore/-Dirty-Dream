@@ -73,15 +73,15 @@ const NewsDetails = () => {
     : [news.desc];
 
   return (
-    <div className="w-full flex justify-center items-center px-4 pt-16 md:pt-24 pb-16">
+    <div className="w-full flex justify-center items-center px-4 pt-22 pb-16">
       <div className="container mx-auto flex flex-col gap-8">
-        <div className="flex justify-end w-full">
+        <div className="flex justify-start md:justify-end w-full">
         <button
           ref={backBtnRef}
           onClick={() => navigate(-1)}
           className="flex items-center gap-2 w-fit px-4 py-2 rounded-2xl border border-gray-200 
             bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] text-white text-sm font-semibold
-            transition-all duration-200 fixed z-10  justify-end hover:scale-105 active:scale-95 hover:bg-[rgba(255,255,255,0.3)]"
+            transition-all duration-200 fixed z-10 cursor-pointer justify-end hover:scale-105 active:scale-95 hover:bg-[rgba(255,255,255,0.3)]"
         >
           <IoArrowBack className="w-4 h-4" />
           Back to News
@@ -101,7 +101,7 @@ const NewsDetails = () => {
           </div>
 
           <div className="px-6 py-6 flex flex-col gap-4">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-snug">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-snug text-single">
               {news.head}
             </h1>
 
@@ -132,7 +132,7 @@ const NewsDetails = () => {
   </p>
 </div>
 
-        <div className="flex w-full justify-end">
+        <div className="flex w-full justify-start md:justify-end">
           {/* <button
             onClick={() => navigate(-1)}
             className="flex items-center gap-2 w-fit self-center px-6 py-3 rounded-2xl border border-gray-200 
@@ -146,7 +146,7 @@ const NewsDetails = () => {
           {id == import.meta.env.VITE_SEARCH && <button
             onClick={() => navigate("/admin/edit", { state: { news } })}
             className="flex items-center gap-2 px-4 py-2 rounded-2xl border border-gray-200
-  bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] text-white text-sm font-semibold
+  bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] text-white text-sm font-semibold cursor-pointer
   transition-all duration-200 hover:scale-105 active:scale-95"
           >
             <FiEdit2 className="w-4 h-4" />
