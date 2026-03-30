@@ -48,7 +48,7 @@ const FAQ = () => {
     <div className="pt-16 px-6 w-full flex items-center justify-center text-secondary">
       <div className="container flex md:flex-row flex-col items-start justify-between">
         <div className="font-bold md:text-[48px] text-[36px] leading-10 md:w-[50%] w-full mb-2.5">
-          <h1 className="text-[0.5em] textoutline-light">FAQ</h1>
+          <h1 className="text-[0.5em] text-single">FAQ</h1>
           <h1 className="text-white textoutline-light">Expecting questions, we answer</h1>
         </div>
         <div className="md:w-[50%] w-full">

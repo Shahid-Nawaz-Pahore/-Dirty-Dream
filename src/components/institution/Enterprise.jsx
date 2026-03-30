@@ -31,7 +31,7 @@ const Enterprise = () => {
             {data.map((item, index) => (
               <div
                 key={index}
-                className="flex gap-4 text-sm font-semibold"
+                className="flex gap-4 text-lg font-semibold"
               >
                 <BsCheckCircle className="w-4 h-4 text-white mt-1 shrink-0 transition-transform group-hover:scale-110" />
                 <p className="script">{item.text}</p>

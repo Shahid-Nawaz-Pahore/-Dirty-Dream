@@ -5,6 +5,9 @@ import { VitePluginRadar } from 'vite-plugin-radar'
 
 // https://vite.dev/config/
 export default defineConfig({
+  server: {
+    allowedHosts: ['gestural-britni-babyishly.ngrok-free.dev']
+  },
   plugins: [
     react(),
     tailwindcss(),

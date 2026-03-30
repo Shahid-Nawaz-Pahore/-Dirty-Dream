@@ -219,7 +219,7 @@ This approach enables multi-layered reward generation. Advanced users benefit fr
   };
 
   return (
-    <div className="w-full flex items-center justify-center pt-26 md:pt-30 px-4 md:pb-0">
+    <div className="w-full flex items-center justify-center pt-26 md:pt-30 px-6 md:pb-0">
       <div className="flex flex-col container mx-auto justify-center items-center gap-6">
         <div className="flex justify-center items-center gap-2 flex-row w-full sm:w-40 h-9 rounded-3xl border border-gray-200 bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] headings">
           <LuBuilding2 className="w-4 h-4" />
@@ -257,7 +257,7 @@ This approach enables multi-layered reward generation. Advanced users benefit fr
           )}
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full news-card items-start">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full news-card items-start">
           {filteredData.map((item, index) => (
             <div
               key={index}
@@ -271,7 +271,7 @@ This approach enables multi-layered reward generation. Advanced users benefit fr
                   { state: { news: item } },
                 )
               }
-              className="relative w-full sm:w-full lg:w-84 group self-start
+              className="relative w-full group self-start
     bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px]
     rounded-xl border border-gray-200
     transition-all duration-500 ease-out
@@ -305,20 +305,20 @@ This approach enables multi-layered reward generation. Advanced users benefit fr
               </div>
 
               <div className="flex flex-col flex-grow px-4 py-4">
-                <div className="text-lg sm:text-xl text-white px-4 mt-4 transition-all duration-300 text-single">
+                <div className="text-xl font-bold text-white px-4 mt-4 transition-all duration-300 text-single">
                   {item.head}
                 </div>
 
-                <div className="px-4 text-sm sm:text-md font-semibold mt-4 transition-opacity duration-300 group-hover:opacity-80">
+                <div className="px-4 text-lg font-semibold mt-4 transition-opacity duration-300 group-hover:opacity-80">
                   {item.desc}
                 </div>
 
                 <div className="flex flex-row flex-wrap gap-3 mt-4">
-                  <div className="flex flex-row gap-1 px-4 text-sm font-semibold items-center">
+                  <div className="flex flex-row gap-1 px-4 text-base font-semibold items-center">
                     <CiCalendarDate className="w-5 h-5" />
                     {item.date}
                   </div>
-                  <div className="flex flex-row gap-1 px-4 text-sm font-semibold items-center">
+                  <div className="flex flex-row gap-1 px-4 text-base font-semibold items-center">
                     <IoMdTime className="w-5 h-5" />
                     {item.time}
                   </div>
