@@ -15,7 +15,7 @@ export default defineConfig({
       // Google Analytics 4
       enableDev: false,
       analytics: {
-        id: 'G-GGR9QHGFLK',  // Your GA4 Measurement ID
+        id: 'G-5H74G3JR3Z',  // Your GA4 Measurement ID
       },
     }),
   ],
