@@ -28,7 +28,7 @@ const Home = () => {
       value: "27.4",
       key: "Total Value Locked",
       prev: "$",
-      after: " M",
+      after: "M",
       point: true
     },
     {
