@@ -73,7 +73,7 @@ const NewsDetails = () => {
     : [news.desc];
 
   return (
-    <div className="w-full flex justify-center items-center px-4 pt-22 pb-16">
+    <div className="w-full flex justify-center items-center px-6 pt-22">
       <div className="container mx-auto flex flex-col gap-8">
         <div className="flex justify-start md:justify-end w-full">
         <button

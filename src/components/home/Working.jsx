@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { PiHandDepositBold } from "react-icons/pi";
 import { RiFolderReceivedLine } from "react-icons/ri";
 import { MdOutlineMultipleStop } from "react-icons/md";
@@ -8,6 +8,9 @@ import { BsFillLightningChargeFill } from "react-icons/bs";
 import { MdOutlineAutoGraph } from "react-icons/md";
 import { GoDotFill } from "react-icons/go";
 const Stats = () => {
+
+  const [width,setWidth] = useState(window.innerWidth);
+  
   const stats = [
     {
       icon: <FaLock className="text-white w-7 h-7" />,
@@ -41,6 +44,18 @@ const Stats = () => {
     },
   ];
 
+  useEffect(()=>{
+
+    const handleResize = (e) => {
+      setWidth(e.target.innerWidth);
+    }
+
+    window.addEventListener("resize",handleResize);
+
+    return () => window.removeEventListener("resize",handleResize)
+
+  },[]);
+
   return (
     <section id="stats" className="overflow-hidden pt-16">
       <style>
@@ -59,11 +74,11 @@ const Stats = () => {
           <GoDotFill className="text-white w-4 h-4 flex-shrink-0" />
         </div>
 
-        <div className="group flex overflow-hidden py-2">
+        <div className="group flex md:overflow-hidden overflow-scroll py-2 md:px-0 px-6 no-scrollbar">
           <div
-            className="flex w-max gap-6 pt-16"
+            className="flex w-max gap-6 pt-16 md:animate-[scrollStats_45s_linear_infinite]"
             style={{
-              animation: "scrollStats 45s linear infinite",
+              // animation: "scrollStats 45s linear infinite",
               animationPlayState: "var(--play-state, running)",
             }}
             onMouseEnter={(e) =>
@@ -73,7 +88,7 @@ const Stats = () => {
               e.currentTarget.style.setProperty("--play-state", "running")
             }
           >
-            {[...stats, ...stats].map((item, i) => (
+            {[...stats, ...(width > 768 ? stats : [])].map((item, i) => (
               <div
                 key={i}
                 className="w-[350px]

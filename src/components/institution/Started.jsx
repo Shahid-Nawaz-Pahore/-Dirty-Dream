@@ -7,7 +7,7 @@ const Started = () => {
   return (
     <div className="w-full flex items-center justify-center pt-16 px-6">
       <div className="container flex justify-center items-center bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] rounded-2xl">
-        <div className="w-full rounded-2xl py-2 px-2">
+        <div className="w-full rounded-2xl p-4">
           <div className="flex flex-col items-center justify-center gap-6 text-center started">
             <LuBuilding2 className="w-14 h-12" />
             <h1 className="text-4xl text-white text-single">Ready to Get Started?</h1>

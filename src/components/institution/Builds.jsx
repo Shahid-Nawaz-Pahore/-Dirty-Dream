@@ -41,33 +41,31 @@ const Builds = () => {
   ];
 
   return (
-  <div className="grid gap-8 pt-10 card 
-  grid-cols-1 px-4
-  sm:grid-cols-2 
-  lg:grid-cols-3 
-  xl:grid-cols-4">
-  
-  {data.map((item, index) => (
-    <div
-      key={index}
-      className="group p-6 rounded-xl flex flex-col gap-3 border 
-      transition bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] 
-      hover:scale-105 duration-500"
-    >
-      <div className="w-8 h-8 rounded-xl flex justify-center items-center">
-        {item.icon}
+    <div className="w-full flex justify-center items-center">
+      <div
+        className="container grid gap-4 pt-10 card 
+          grid-cols-1 md:px-0 px-6
+          sm:grid-cols-2 
+          lg:grid-cols-3"
+      >
+        {data.map((item, index) => (
+          <div
+            key={index}
+            className="group p-6 rounded-xl flex flex-col gap-3 border 
+        transition bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] 
+        hover:scale-105 duration-500"
+          >
+            <div className="w-8 h-8 rounded-xl flex justify-center items-center">
+              {item.icon}
+            </div>
+
+            <h2 className="text-xl font-bold text-single">{item.heading}</h2>
+
+            <p className="text-lg font-semibold">{item.para}</p>
+          </div>
+        ))}
       </div>
-
-      <h2 className="text-xl font-bold text-single">
-        {item.heading}
-      </h2>
-
-      <p className="text-md font-semibold">
-        {item.para}
-      </p>
     </div>
-  ))}
-</div>
   );
 };
 

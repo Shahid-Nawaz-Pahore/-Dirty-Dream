@@ -38,7 +38,7 @@ const Solutions = () => {
     },
   ];
   return (
-    <div className="w-full flex items-center justify-center pt-16 px-6">
+    <div className="w-full flex items-center justify-center pt-16 md:px-0 px-6">
       <div className="container flex flex-col justify-center text-white">
         <div className="flex flex-col text-center gap-2 liness">
           <h1 className="md:text-6xl text-4xl font-bold textoutline-light">
@@ -49,31 +49,34 @@ const Solutions = () => {
           </h1>
         </div>
 
-        <div className="flex md:justify-between justify-center flex-wrap gap-8 mt-10 blockk">
+        <div className="container grid gap-4 pt-10 card 
+          grid-cols-1
+          sm:grid-cols-2 
+          lg:grid-cols-3">
           {data.map((item, index) => (
             <div
-              className="md:w-76 w-full group p-6 rounded-xl flex flex-col gap-3 border transition-all duration-500 bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] hover:scale-105"
+              className="group p-6 rounded-xl flex flex-col gap-3 border transition-all duration-500 bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px] hover:scale-105"
               key={index}
             >
               <div className="w-8 h-8 rounded-xl flex justify-center items-center transition-transform">
                 {item.icon}
               </div>
               <div className="text-xl font-bold text-single">{item.heading}</div>
-              <div className="text-sm font-semibold">
+              <div className="text-lg font-semibold">
                 {item.desc}
               </div>
 
-              <div className="flex flex-row gap-2 justify-start items-center text-sm">
+              <div className="flex flex-row gap-2 justify-start items-center text-lg">
                 {item.tickIcon}
-          
+                {item.p1}
               </div>
 
-              <div className="flex flex-row gap-2 justify-start items-center text-sm">
+              <div className="flex flex-row gap-2 justify-start items-center text-lg">
                 {item.tickIcon}
                 {item.p2}
               </div>
 
-              <div className="flex flex-row gap-2 justify-start items-center text-sm">
+              <div className="flex flex-row gap-2 justify-start items-center text-lg">
                 {item.tickIcon}
                 {item.p3}
               </div>
