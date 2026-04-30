@@ -261,16 +261,21 @@ This approach enables multi-layered reward generation. Advanced users benefit fr
           {filteredData.map((item, index) => (
             <div
               key={index}
-              onClick={() =>
-                navigate(
-                  `/NewsDetails${
-                    String(id) === import.meta.env.VITE_SEARCH
-                      ? `/admin?id=${id}`
-                      : ""
-                  }`,
-                  { state: { news: item } },
-                )
-              }
+              onClick={() => {
+  navigate(
+    `/NewsDetails${
+      String(id) === import.meta.env.VITE_SEARCH
+        ? `/admin?id=${id}`
+        : ""
+    }`,
+    { state: { news: item } },
+  );
+
+  window.gtag("event", "New_Card_Click", {  // ← also fix gtag syntax
+    event_category: "Wallet",
+    event_label: "New_Card_Click",
+  });
+}}
               className="relative w-full group self-start
     bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px]
     rounded-xl border border-gray-200
