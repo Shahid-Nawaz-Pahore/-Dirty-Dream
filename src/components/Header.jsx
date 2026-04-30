@@ -40,7 +40,8 @@ const Header = () => {
         >
           <h1 className="text-single">Start Staking</h1>
           <BsArrowRight />
-        </button>
+        </button> 
+        {/* buuton */}
       </div>
     </div>
   );
