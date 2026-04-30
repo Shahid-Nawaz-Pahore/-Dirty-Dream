@@ -74,7 +74,7 @@ const Hero = ({ data }) => {
           <button
             onClick={(e)=> {
               e.preventDefault()
-              handleOutboundClick('https://stakee-stake.vercel.app')
+              handleOutboundClick('https://dirty-dreamapp.vercel.app')
             }}
             className="text-single text-xl font-medium bg-btn text-white py-3 px-5 rounded-full cursor-pointer"
             id="content-3"

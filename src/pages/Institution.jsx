@@ -18,7 +18,7 @@ const Institution = () => {
 
   const stats = [
     {
-      value: "500",
+      value: "100",
       key: "Total Value Locked",
       prev: "$",
       after: "M+",

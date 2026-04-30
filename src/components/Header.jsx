@@ -32,13 +32,9 @@ const Header = () => {
         <img src="/Logo.svg" className="w-12" />
         <NavIndicator className="hidden md:flex" />
         <button
-          onClick={(e) => {
-            window.gtag("event", "start_staking_clicked", {
-              category: "Wallet",
-              label: "start staking clicked",
-            });
-            e.preventDefault();
-            handleOutboundClick("https://stakee-stake.vercel.app");
+          onClick={(e)=> {
+            e.preventDefault()
+            handleOutboundClick('https://dirty-dreamapp.vercel.app')
           }}
           className="bg-btn font-bold text-white py-3 px-5 rounded-full flex items-center gap-2 hover:cursor-pointer hover:shadow-2xl"
         >

@@ -33,7 +33,7 @@ const CTA = () => {
             <button
               onClick={(e) => {
                 e.preventDefault();
-                handleOutboundClick("https://stakee-stake.vercel.app");
+                handleOutboundClick("https://dirty-dreamapp.vercel.app");
               }}
               className="bg-btn text-white py-3 px-5 rounded-full flex items-center gap-2 hover:cursor-pointer hover:shadow-2xl"
             >
