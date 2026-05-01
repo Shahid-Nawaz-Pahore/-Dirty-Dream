@@ -18,17 +18,17 @@ const Home = () => {
 
   const stats = [
     {
-      value: "2.9",
+      value: "5.3",
       key: "Annual Percentage Yield",
       prev: null,
       after: "%",
       point: true
     },
     {
-      value: "62.4",
+      value: "27.4",
       key: "Total Value Locked",
       prev: "$",
-      after: " M",
+      after: "M",
       point: true
     },
     {
@@ -39,7 +39,7 @@ const Home = () => {
       point: false
     },
     {
-      value: "2.1",
+      value: "27.4",
       key: "TON Staked",
       prev: null,
       after: "M",
