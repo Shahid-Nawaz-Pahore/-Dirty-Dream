@@ -13,6 +13,7 @@ import AddNewsForm from "../AddNewsForm";
 import DeleteModal from "../DeleteModal";
 import DeleteNews from "../DeleteNews";
 import useDeleteModalStore from "../../store/useDeleteModalStore";
+import { ReactGA } from "react-ga4";
 const Hero = () => {
   const [search, setSearch] = useState("");
   const [editingIndex, setEditingIndex] = useState(null);
@@ -262,20 +263,21 @@ This approach enables multi-layered reward generation. Advanced users benefit fr
             <div
               key={index}
               onClick={() => {
-  navigate(
-    `/NewsDetails${
-      String(id) === import.meta.env.VITE_SEARCH
-        ? `/admin?id=${id}`
-        : ""
-    }`,
-    { state: { news: item } },
-  );
+                navigate(
+                  `/NewsDetails${
+                    String(id) === import.meta.env.VITE_SEARCH
+                      ? `/admin?id=${id}`
+                      : ""
+                  }`,
+                  { state: { news: item } },
+                );
 
-  window.gtag("event", "New_Card_Click", {  // ← also fix gtag syntax
-    event_category: "Wallet",
-    event_label: "New_Card_Click",
-  });
-}}
+                ReactGA.event("News_Details_clicked", {
+                  wallet_action: "News Details clicked",
+                  button_name: "News_Details_clicked",
+                  location: "header",
+                });
+              }}
               className="relative w-full group self-start
     bg-[rgba(255,255,255,0.2)] backdrop-blur-[20px]
     rounded-xl border border-gray-200
