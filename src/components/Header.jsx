@@ -32,6 +32,7 @@ const Header = () => {
         <NavIndicator className="hidden md:flex" />
         <button
           onClick={(e) => {
+            // ReactGA
             ReactGA.event("wallet_connect_clicked", {
               wallet_action: "Connect click",
               button_name: "connect_wallet",
