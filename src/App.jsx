@@ -14,7 +14,7 @@ import Stake from "./components/Stake.jsx";
 import NewsDetails from "./pages/NewsDetails.jsx";
 import EditNews from "./pages/EditNews.jsx";
 import { LuLoader } from "react-icons/lu";
-
+import ReactGA from "react-ga4";
 const App = () => {
   gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -26,6 +26,15 @@ const App = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
+
+   useEffect(() => {
+    if (loading) return;
+
+    ReactGA.send({
+      hitType: "pageview",
+      page: location.pathname + location.search,
+    });
+  }, [location, loading]);
 
   return (
     <>

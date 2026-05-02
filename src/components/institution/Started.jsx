@@ -2,8 +2,6 @@ import React, { useEffect } from "react";
 import { LuBuilding2 } from "react-icons/lu";
 import { PiHeadphonesBold } from "react-icons/pi";
 import ReactGA from "react-ga4";
-ReactGA.initialize("G-3QSS9C0XPP");
-
 const Started = () => {
   return (
     <div className="w-full flex items-center justify-center pt-16 px-6">
@@ -25,9 +23,10 @@ const Started = () => {
                 <PiHeadphonesBold className="w-5 h-5" />
                 <button
                   onClick={() => {
-                    window.gtag("event", "Contact_Sales_Team_click", {
-                      category: "Wallet",
-                      label: "Contact Sales Team clicked",
+                    ReactGA.event("Contact_Sales_Team_clicked", {
+                      wallet_action: "Contact Sales Team",
+                      button_name: "Contact Sales Team",
+                      location: "header",
                     });
                   }}
                   className="font-semibold text-md"
@@ -39,9 +38,10 @@ const Started = () => {
               <div className="w-full sm:w-44 h-11 flex gap-2 cursor-pointer justify-center items-center transform duration-300 hover:scale-102 bg-btn text-white rounded-2xl">
                 <button
                   onClick={() => {
-                    window.gtag("event" , "request_documentation_click", {
-                      category: "Wallet",
-                      label: "request documentation clicked",
+                    ReactGA.event("Request_Documentation_clicked", {
+                      wallet_action: "Request Documentation",
+                      button_name: "Request Documentation",
+                      location: "header",
                     });
                   }}
                   className="font-semibold text-md"

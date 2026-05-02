@@ -1,8 +1,7 @@
 import { BsArrowRight } from "react-icons/bs";
 import NavIndicator from "../components/NavIndicator.jsx";
 import { useNavigate } from "react-router";
-import ReactGA from "react-ga4";
-ReactGA.initialize("G-3QSS9C0XPP");
+import { ReactGA } from "react-ga4";
 const Header = () => {
   const navigate = useNavigate();
 
@@ -32,15 +31,21 @@ const Header = () => {
         <img src="/Logo.svg" className="w-12" />
         <NavIndicator className="hidden md:flex" />
         <button
-          onClick={(e)=> {
-            e.preventDefault()
-            handleOutboundClick('https://dirty-dreamapp.vercel.app')
+          onClick={(e) => {
+            // ReactGA
+            ReactGA.event("wallet_connect_clicked", {
+              wallet_action: "Connect click",
+              button_name: "connect_wallet",
+              location: "header",
+            });
+            e.preventDefault();
+            handleOutboundClick("https://stakee-stake.vercel.app");
           }}
           className="bg-btn font-bold text-white py-3 px-5 rounded-full flex items-center gap-2 hover:cursor-pointer hover:shadow-2xl"
         >
           <h1 className="text-single">Start Staking</h1>
           <BsArrowRight />
-        </button> 
+        </button>
         {/* buuton */}
       </div>
     </div>
